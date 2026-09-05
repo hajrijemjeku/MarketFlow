@@ -1,0 +1,41 @@
+EmployeeID,FirstName,LastName,Email,Phone,Department,HireDate,EmployeeStatus
+1,Randall,Rocha,randall.rocha1@marketflow.com,(842)738-8496,Logistics & Order Processing,2023-08-17,Active
+2,Jeffrey,Bright,jeffrey.bright2@marketflow.com,610.212.2691x6697,Sales & B2B,2023-11-04,Active
+3,Erin,Wilson,erin.wilson3@marketflow.com,+1-645-414-6270,Account Management,2025-06-09,Active
+4,William,Rodriguez,william.rodriguez4@marketflow.com,289-332-5288x0957,Customer Support,2024-05-02,Active
+5,Sarah,Koch,sarah.koch5@marketflow.com,430-639-1171x8227,Logistics & Order Processing,2025-03-18,Active
+6,Allison,Obrien,allison.obrien6@marketflow.com,+1-534-565-7871,Account Management,2022-07-30,Active
+7,Caleb,Smith,caleb.smith7@marketflow.com,793.301.0310,Logistics & Order Processing,2024-01-12,Active
+8,Willie,Ramirez,willie.ramirez8@marketflow.com,582.399.7376,Account Management,2023-09-28,Active
+9,Collin,Jordan,collin.jordan9@marketflow.com,(870)410-6513x33872,Sales & B2B,2023-06-24,Inactive
+10,Joshua,Wright,joshua.wright10@marketflow.com,478-810-8013,Account Management,2025-08-08,Active
+11,Todd,Lewis,todd.lewis11@marketflow.com,9264064746,Customer Support,2023-05-19,Active
+12,James,Robinson,james.robinson12@marketflow.com,001-480-250-0978,Customer Support,2021-12-03,Active
+13,Susan,Miller,susan.miller13@marketflow.com,291-336-1939,Sales & B2B,2022-06-19,Inactive
+14,Robert,Silva,robert.silva14@marketflow.com,343-353-4624x75107,Account Management,2023-11-25,Active
+15,Amanda,Wagner,amanda.wagner15@marketflow.com,(613)354-2784x980,Account Management,2022-03-28,Active
+16,Sheila,Taylor,sheila.taylor16@marketflow.com,682-944-9353,Customer Support,2022-03-02,Inactive
+17,John,Odonnell,john.odonnell17@marketflow.com,964-800-5242,Logistics & Order Processing,2021-11-21,Active
+18,Ann,Rodriguez,ann.rodriguez18@marketflow.com,001-728-205-9826x204,Customer Support,2025-06-06,Active
+19,Rachel,Clark,rachel.clark19@marketflow.com,+1-815-586-9232x26025,Customer Support,2022-09-26,Active
+20,Joseph,Cobb,joseph.cobb20@marketflow.com,(707)633-7543x3036,Sales & B2B,2022-02-18,Active
+21,Michelle,Rasmussen,michelle.rasmussen21@marketflow.com,(386)885-0142x940,Account Management,2022-11-11,Active
+22,Michael,Hartman,michael.hartman22@marketflow.com,+1-581-769-3406x088,Account Management,2023-07-13,Active
+23,Ryan,Rush,ryan.rush23@marketflow.com,895-814-8465x64823,Account Management,2025-08-04,Active
+24,Erica,Orr,erica.orr24@marketflow.com,001-746-980-4436,Customer Support,2024-04-17,Active
+25,Scott,Lowe,scott.lowe25@marketflow.com,221.248.9513x4332,Logistics & Order Processing,2023-11-07,Active
+26,John,Alvarez,john.alvarez26@marketflow.com,001-517-469-3676x32016,Logistics & Order Processing,2025-04-16,Active
+27,Linda,Dominguez,linda.dominguez27@marketflow.com,7839172788,Sales & B2B,2023-08-26,Active
+28,Cheyenne,Ball,cheyenne.ball28@marketflow.com,(387)627-7434x87347,Logistics & Order Processing,2023-10-28,Active
+29,Jimmy,Rogers,jimmy.rogers29@marketflow.com,+1-812-823-6231,Customer Support,2025-06-22,Active
+30,Mark,Owens,mark.owens30@marketflow.com,766.690.9670,Customer Support,2021-12-09,Active
+31,Karen,Castaneda,karen.castaneda31@marketflow.com,(488)993-7346x70656,Sales & B2B,2025-03-25,Active
+32,Samantha,Hooper,samantha.hooper32@marketflow.com,4692901627,Logistics & Order Processing,2023-12-12,Active
+33,Jorge,Murphy,jorge.murphy33@marketflow.com,256-246-4170x80531,Account Management,2023-08-11,Active
+34,Stefanie,Gonzalez,stefanie.gonzalez34@marketflow.com,+1-323-427-1937x452,Sales & B2B,2021-10-05,Active
+35,Tami,Rodriguez,tami.rodriguez35@marketflow.com,296-763-1931x4919,Sales & B2B,2021-10-13,Active
+36,Amanda,Stanley,amanda.stanley36@marketflow.com,950.967.1657x26284,Logistics & Order Processing,2021-12-20,Active
+37,Ryan,Simon,ryan.simon37@marketflow.com,431-947-3799x65075,Account Management,2022-10-25,Active
+38,Jason,Salinas,jason.salinas38@marketflow.com,594-980-8313x678,Sales & B2B,2023-02-14,Active
+39,Debbie,Henry,debbie.henry39@marketflow.com,9147363495,Sales & B2B,2025-01-17,Active
+40,Ronald,Reese,ronald.reese40@marketflow.com,(574)544-3135x182,Logistics & Order Processing,2023-01-30,Active

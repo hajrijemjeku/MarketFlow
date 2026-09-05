@@ -1,0 +1,281 @@
+ProductID,ProductName,CategoryID,SupplierID,Price,Cost,StockQuantity,ProductStatus
+1,Gray Responsibility 1,9,21,643.08,521.31,50,Active
+2,Seagreen Type 2,15,16,394.13,247.31,163,Active
+3,Skyblue Perhaps 3,14,8,557.91,423.24,0,Discontinued
+4,Yellowgreen City 4,2,2,583.61,415.6,247,Active
+5,Limegreen Answer 5,11,24,597.45,459.1,51,Active
+6,Deeppink Big 6,13,17,34.19,22.85,412,Active
+7,Darkorange Late 7,3,13,62.52,45.75,170,Active
+8,Wheat Choice 8,10,24,542.39,369.45,145,Active
+9,Khaki Best 9,6,6,217.62,176.74,142,Active
+10,Indianred Million 10,14,22,132.89,94.0,0,Discontinued
+11,Tomato Be 11,2,1,202.6,145.67,454,Active
+12,Steelblue Boy 12,11,24,677.11,485.49,325,Active
+13,Aquamarine And 13,6,23,800.5,542.3,164,Active
+14,Olivedrab City 14,2,5,149.0,116.74,366,Active
+15,Magenta Commercial 15,4,1,255.83,175.29,233,Active
+16,Paleturquoise Guy 16,14,21,973.78,687.97,0,Out of Stock
+17,Sandybrown Natural 17,13,15,173.9,127.05,0,Out of Stock
+18,Powderblue Talk 18,15,5,818.1,593.64,20,Active
+19,Indianred Respond 19,14,15,604.84,472.33,436,Active
+20,Mediumseagreen High 20,7,2,339.73,273.74,231,Active
+21,Tan Material 21,7,16,851.91,592.29,158,Active
+22,Royalblue Fear 22,1,16,457.79,325.75,488,Active
+23,Mediumturquoise Trial 23,11,16,236.54,193.21,0,Discontinued
+24,Darksalmon Key 24,10,11,584.38,447.07,465,Active
+25,Hotpink Speak 25,8,4,631.62,400.88,367,Active
+26,Lime Morning 26,7,1,204.87,137.45,234,Active
+27,Turquoise No 27,4,17,287.02,183.56,318,Active
+28,Darkturquoise Deal 28,14,23,662.55,529.0,374,Active
+29,Snow Than 29,7,14,981.65,668.13,417,Active
+30,Deeppink Forward 30,8,6,658.15,501.26,351,Active
+31,Magenta Find 31,8,5,185.47,146.9,416,Active
+32,Ghostwhite Career 32,7,16,320.79,249.88,0,Discontinued
+33,Mediumblue Degree 33,1,12,947.92,705.92,0,Out of Stock
+34,Mediumorchid But 34,14,17,43.21,35.26,326,Active
+35,Cornflowerblue Way 35,4,4,633.08,453.97,411,Active
+36,Seagreen New 36,6,25,72.7,46.87,87,Active
+37,Ghostwhite On 37,14,23,1009.52,700.22,0,Out of Stock
+38,Bisque Glass 38,1,15,1016.34,641.2,64,Active
+39,Brown Enjoy 39,13,20,758.76,491.63,0,Out of Stock
+40,Lightcoral Great 40,9,2,520.37,410.77,0,Out of Stock
+41,Moccasin Drug 41,4,12,176.54,134.06,269,Active
+42,Violet Culture 42,8,24,880.29,697.69,429,Active
+43,Teal Marriage 43,3,4,935.97,680.39,403,Active
+44,Dimgray Account 44,1,8,930.25,669.5,97,Active
+45,Lightgray Let 45,2,9,456.92,304.22,350,Active
+46,Orchid Material 46,4,5,854.22,605.03,80,Active
+47,Powderblue Hundred 47,13,14,459.02,336.59,446,Active
+48,Oldlace Section 48,9,22,358.48,295.8,0,Out of Stock
+49,Brown No 49,1,23,1020.52,646.94,0,Out of Stock
+50,Darksalmon Now 50,6,13,994.53,785.74,0,Discontinued
+51,Yellowgreen Mission 51,13,2,774.23,531.54,39,Active
+52,Lime Full 52,11,23,994.18,641.27,224,Active
+53,Steelblue Likely 53,7,22,873.28,563.62,170,Active
+54,Cyan Several 54,15,12,21.31,16.24,481,Active
+55,Darkseagreen Around 55,3,23,479.69,329.11,329,Active
+56,Seashell Form 56,13,20,776.63,525.11,410,Active
+57,Honeydew Away 57,11,13,966.47,622.57,0,Out of Stock
+58,Indianred Sense 58,9,11,473.18,318.09,276,Active
+59,Orange One 59,9,10,251.22,178.85,184,Active
+60,Mistyrose Pm 60,13,21,165.23,136.42,313,Active
+61,Gold Board 61,5,8,882.1,667.46,268,Active
+62,Navy Standard 62,2,24,77.39,57.36,191,Active
+63,Darkslateblue Individual 63,2,2,958.03,607.68,303,Active
+64,Darksalmon Beyond 64,12,1,586.27,367.99,307,Active
+65,Blanchedalmond Medical 65,10,23,1039.76,716.53,314,Active
+66,Lightyellow Seek 66,4,12,361.37,246.37,303,Active
+67,Darkblue Even 67,11,5,808.59,574.34,177,Active
+68,Lightgray Discussion 68,9,19,245.03,162.12,85,Active
+69,Aliceblue Prove 69,12,14,819.14,664.47,0,Discontinued
+70,Darkred Administration 70,15,5,532.42,386.24,279,Active
+71,Orange Beat 71,7,19,682.59,451.59,309,Active
+72,Lightseagreen Win 72,8,21,474.04,344.5,260,Active
+73,Lightslategray Heart 73,12,14,831.13,660.81,0,Out of Stock
+74,Darkturquoise Perhaps 74,12,15,166.27,112.21,70,Active
+75,Olive Word 75,12,7,448.57,369.79,0,Out of Stock
+76,Linen He 76,9,12,920.83,738.14,66,Active
+77,Sandybrown Forget 77,2,12,561.47,461.69,0,Out of Stock
+78,Lightpink Word 78,6,10,1047.68,792.91,415,Active
+79,Greenyellow Different 79,3,5,861.19,629.2,166,Active
+80,Cornflowerblue Physical 80,15,10,275.45,180.31,72,Active
+81,Silver Bill 81,9,12,77.19,63.38,168,Active
+82,Darkred Result 82,10,15,1090.89,721.23,378,Active
+83,Mistyrose Dream 83,14,20,144.27,114.92,399,Active
+84,Khaki Tell 84,8,22,564.13,364.77,419,Active
+85,Lemonchiffon Very 85,10,22,681.02,502.64,183,Active
+86,Lightsalmon Stock 86,9,2,1193.28,766.88,340,Active
+87,Royalblue Community 87,2,6,812.54,568.69,372,Active
+88,Plum Thousand 88,5,18,757.47,519.68,0,Out of Stock
+89,Seagreen Air 89,10,18,568.71,465.72,106,Active
+90,Darkgoldenrod Ago 90,13,16,491.54,407.08,282,Active
+91,Brown Skin 91,3,1,291.37,227.22,439,Active
+92,Greenyellow Strong 92,15,19,549.63,360.94,215,Active
+93,Limegreen Draw 93,10,2,626.68,398.26,102,Active
+94,Lightyellow Fish 94,7,1,914.43,689.12,68,Active
+95,Springgreen His 95,2,18,179.64,142.84,55,Active
+96,Yellow School 96,3,10,1121.55,762.21,0,Discontinued
+97,Mintcream Teach 97,6,6,38.5,31.47,173,Active
+98,Palevioletred Produce 98,3,14,932.39,715.48,470,Active
+99,Cornflowerblue Similar 99,2,2,255.18,170.02,262,Active
+100,Wheat Need 100,9,25,645.31,408.49,172,Active
+101,Tan Best 101,8,18,462.13,331.59,129,Active
+102,Sienna Music 102,15,1,352.97,222.64,136,Active
+103,Palegreen Argue 103,13,18,656.03,524.73,238,Active
+104,Darkseagreen Business 104,2,21,613.34,405.34,0,Out of Stock
+105,Moccasin Page 105,9,6,888.35,627.8,476,Active
+106,Deepskyblue Money 106,9,15,65.61,43.02,327,Active
+107,Lightcyan Director 107,5,21,933.7,777.94,256,Active
+108,Saddlebrown Leave 108,5,20,306.47,208.2,441,Active
+109,Indigo Myself 109,11,7,663.14,472.28,0,Discontinued
+110,Darksalmon Military 110,12,18,600.49,454.83,72,Active
+111,Lightslategray Past 111,14,5,932.22,582.81,117,Active
+112,Brown Wide 112,10,17,1017.21,766.36,185,Active
+113,Honeydew Difficult 113,11,9,1162.63,783.92,349,Active
+114,Darkorchid College 114,6,11,279.33,176.39,477,Active
+115,Firebrick Cultural 115,12,5,625.25,520.69,471,Active
+116,Khaki Truth 116,1,22,209.21,147.09,260,Active
+117,Mediumblue Everything 117,13,13,659.17,435.12,49,Active
+118,Blueviolet Woman 118,9,1,1091.59,715.13,73,Active
+119,Purple Address 119,6,13,891.47,663.7,403,Active
+120,Lightsteelblue Little 120,13,23,983.93,787.2,108,Active
+121,Greenyellow Rich 121,8,1,223.46,185.0,481,Active
+122,Darkorchid Forget 122,12,12,246.21,161.29,423,Active
+123,Violet Discover 123,12,8,272.6,195.06,153,Active
+124,Orchid One 124,8,23,729.75,568.5,430,Active
+125,Sandybrown Force 125,11,13,128.01,97.65,97,Active
+126,Salmon Market 126,9,7,757.74,531.27,299,Active
+127,Springgreen Especially 127,3,3,711.21,474.65,0,Out of Stock
+128,Antiquewhite Machine 128,15,19,1064.68,685.83,150,Active
+129,Azure Do 129,4,22,44.87,28.26,324,Active
+130,Palegreen Image 130,5,22,625.15,452.49,338,Active
+131,Palevioletred Trade 131,11,21,80.3,50.97,218,Active
+132,Midnightblue Interest 132,5,4,758.96,547.34,398,Active
+133,Aquamarine About 133,1,24,245.7,187.39,239,Active
+134,Royalblue Huge 134,6,1,426.27,319.57,423,Active
+135,Darkslategray Color 135,1,24,277.82,188.25,479,Active
+136,Deepskyblue Camera 136,4,7,185.33,139.94,59,Active
+137,Gainsboro Store 137,1,16,424.86,351.24,488,Active
+138,Whitesmoke Care 138,6,9,285.18,205.25,436,Active
+139,Darkorchid Partner 139,1,11,544.47,420.54,0,Discontinued
+140,Hotpink Town 140,10,20,441.37,356.44,73,Active
+141,Steelblue Just 141,2,2,991.87,734.2,365,Active
+142,Whitesmoke Community 142,2,5,89.71,58.98,0,Discontinued
+143,Skyblue One 143,10,21,435.68,351.15,0,Discontinued
+144,Lightgoldenrodyellow Sound 144,1,10,927.22,681.44,220,Active
+145,Purple Cell 145,4,20,916.31,632.11,247,Active
+146,Pink Every 146,13,14,1020.84,705.15,490,Active
+147,Indianred Place 147,11,1,490.87,368.72,62,Active
+148,Greenyellow Decade 148,1,20,824.22,573.51,473,Active
+149,Aqua What 149,10,5,668.87,513.52,381,Active
+150,Lime Seven 150,10,15,196.9,156.88,0,Discontinued
+151,Mistyrose Quickly 151,3,10,662.95,471.77,193,Active
+152,Plum Over 152,5,19,1071.23,709.33,0,Out of Stock
+153,Firebrick Recognize 153,5,20,378.51,280.89,0,Discontinued
+154,Blue We 154,10,22,667.55,545.86,437,Active
+155,Palegoldenrod Institution 155,9,2,438.96,343.43,475,Active
+156,Orchid Alone 156,4,3,410.55,279.83,249,Active
+157,Lightpink Of 157,10,23,388.76,271.6,325,Active
+158,Midnightblue Each 158,5,14,334.84,269.61,476,Active
+159,Darkgray Court 159,1,16,220.27,183.33,127,Active
+160,Green Entire 160,8,20,248.36,178.38,427,Active
+161,Lightgray Describe 161,6,24,417.52,306.97,13,Active
+162,Mediumspringgreen Near 162,6,1,82.72,68.25,0,Out of Stock
+163,Lightsalmon Particular 163,5,15,234.62,163.58,32,Active
+164,Darkgoldenrod Budget 164,1,7,211.12,166.28,378,Active
+165,Turquoise Really 165,3,11,882.32,679.55,100,Active
+166,Magenta Trade 166,14,9,881.42,729.41,204,Active
+167,Plum Have 167,11,4,356.11,277.32,199,Active
+168,Darkgreen Class 168,13,12,838.87,532.12,329,Active
+169,Lightgoldenrodyellow Course 169,15,14,863.12,703.93,0,Out of Stock
+170,Darkorchid Air 170,15,5,814.48,637.97,201,Active
+171,Orange So 171,6,20,508.1,349.34,400,Active
+172,Lavenderblush Manage 172,10,19,225.41,159.39,177,Active
+173,Darkcyan Matter 173,4,2,665.55,507.27,0,Out of Stock
+174,Azure Food 174,9,19,911.18,709.81,0,Out of Stock
+175,Ivory Strategy 175,8,22,628.11,495.76,461,Active
+176,Oldlace Entire 176,11,25,576.9,412.24,174,Active
+177,Wheat Beyond 177,12,12,592.34,425.13,252,Active
+178,Darkblue Risk 178,5,19,512.5,326.75,28,Active
+179,Palevioletred Short 179,4,8,990.0,716.96,121,Active
+180,Mediumslateblue Particularly 180,5,14,1017.24,712.08,201,Active
+181,Mediumvioletred Wish 181,5,18,115.49,76.96,275,Active
+182,Mistyrose Sing 182,6,8,653.31,471.33,228,Active
+183,Navy Page 183,8,15,473.71,351.68,149,Active
+184,Lightgoldenrodyellow Compare 184,7,1,196.43,151.86,193,Active
+185,Cornsilk Prevent 185,15,3,339.91,242.67,50,Active
+186,Lightblue Money 186,13,9,919.63,742.02,0,Discontinued
+187,Gray Will 187,1,18,215.12,168.24,164,Active
+188,Darkkhaki Detail 188,12,25,720.38,550.0,80,Active
+189,Paleturquoise Daughter 189,14,25,816.04,575.79,404,Active
+190,Orangered Great 190,5,10,998.17,659.62,217,Active
+191,Springgreen Cost 191,14,19,733.3,608.67,399,Active
+192,Slategray Instead 192,3,13,282.66,189.79,129,Active
+193,Sandybrown Late 193,9,19,948.3,630.92,246,Active
+194,Turquoise Mind 194,6,3,328.13,257.33,367,Active
+195,Sienna Method 195,7,7,549.52,356.56,0,Discontinued
+196,Moccasin Out 196,3,19,925.9,700.26,265,Active
+197,Honeydew Herself 197,13,22,893.87,669.1,361,Active
+198,Peru Away 198,13,13,904.38,612.64,310,Active
+199,Honeydew These 199,1,19,989.05,630.43,0,Out of Stock
+200,Magenta Behind 200,6,19,731.51,507.57,453,Active
+201,Slateblue Even 201,7,13,232.35,171.32,106,Active
+202,Cornsilk Pattern 202,8,4,427.54,269.78,165,Active
+203,Mediumturquoise Discussion 203,2,6,131.33,92.41,0,Discontinued
+204,Bisque Officer 204,12,20,504.77,396.0,0,Discontinued
+205,Yellowgreen Successful 205,7,10,227.28,172.65,242,Active
+206,Lime Country 206,1,12,532.41,419.64,220,Active
+207,Plum Stop 207,7,6,991.04,791.78,390,Active
+208,Slategray Top 208,2,13,1182.18,764.53,0,Out of Stock
+209,Darkseagreen Dark 209,4,10,521.49,351.44,319,Active
+210,Green Political 210,10,10,664.24,474.12,151,Active
+211,Aquamarine Respond 211,4,1,1092.93,792.96,319,Active
+212,Slategray Time 212,13,8,665.42,425.43,245,Active
+213,Palegreen Building 213,8,19,50.55,40.88,480,Active
+214,Moccasin Tree 214,8,12,836.23,563.25,323,Active
+215,Black Alone 215,14,6,429.74,337.89,231,Active
+216,Darkgray Bad 216,8,13,929.01,729.56,211,Active
+217,Cyan Door 217,12,2,308.65,199.36,331,Active
+218,Darkmagenta Good 218,9,10,658.32,536.66,471,Active
+219,Linen Never 219,4,16,503.95,334.91,0,Out of Stock
+220,Aliceblue Foot 220,6,3,850.53,606.76,219,Active
+221,Lightskyblue Cover 221,8,6,294.07,209.69,47,Active
+222,Gray Itself 222,11,23,752.95,543.74,214,Active
+223,Lightcoral Money 223,14,7,389.43,323.37,0,Out of Stock
+224,Dimgray Son 224,15,5,402.49,268.42,44,Active
+225,Crimson Every 225,2,18,785.87,529.05,251,Active
+226,Aquamarine Begin 226,14,9,855.84,674.83,0,Discontinued
+227,Aliceblue Treat 227,2,6,342.68,242.37,49,Active
+228,Violet Indeed 228,11,25,24.69,18.86,101,Active
+229,Darkgray Such 229,4,23,54.7,37.21,366,Active
+230,Olivedrab Standard 230,1,21,948.25,651.09,469,Active
+231,Lightcoral That 231,2,13,765.07,555.37,34,Active
+232,Salmon Score 232,13,13,968.09,616.02,132,Active
+233,Azure Forget 233,4,3,27.46,22.67,0,Discontinued
+234,Darkcyan Guess 234,14,7,670.43,547.17,59,Active
+235,Skyblue Door 235,13,22,180.69,142.63,65,Active
+236,Wheat Recently 236,14,11,384.32,264.92,488,Active
+237,Bisque I 237,9,13,938.43,751.75,192,Active
+238,Saddlebrown Position 238,6,6,31.94,21.85,0,Discontinued
+239,Olive Main 239,4,15,269.05,183.88,329,Active
+240,Lavender Impact 240,6,2,81.35,63.19,316,Active
+241,Royalblue Course 241,8,4,868.81,572.9,301,Active
+242,Blue Pattern 242,3,9,1105.36,767.64,366,Active
+243,Orangered By 243,7,22,1116.94,740.4,0,Out of Stock
+244,Brown Suddenly 244,3,21,902.38,611.76,351,Active
+245,Gainsboro Sort 245,8,3,396.55,274.73,205,Active
+246,Goldenrod Low 246,9,21,835.26,596.03,16,Active
+247,Gainsboro Lay 247,4,1,774.56,496.92,387,Active
+248,Linen Door 248,7,25,249.31,202.4,0,Out of Stock
+249,Forestgreen Art 249,8,10,229.0,169.59,131,Active
+250,Moccasin Mr 250,15,24,761.52,482.48,178,Active
+251,Orange Out 251,3,9,395.15,260.86,0,Discontinued
+252,Purple Cold 252,13,14,686.58,521.96,0,Discontinued
+253,Lightgreen Which 253,14,24,352.37,271.7,474,Active
+254,Mistyrose Pressure 254,15,22,1202.51,790.82,123,Active
+255,Seashell Body 255,10,13,537.33,421.96,43,Active
+256,Moccasin High 256,14,16,83.37,65.29,82,Active
+257,Red Prepare 257,4,5,118.54,82.49,487,Active
+258,Gray Close 258,4,8,563.1,410.87,94,Active
+259,Slategray Manage 259,12,7,258.55,203.49,156,Active
+260,Antiquewhite By 260,10,15,991.79,774.5,256,Active
+261,Darkorange Responsibility 261,2,12,411.32,324.61,268,Active
+262,Mediumseagreen Foot 262,10,24,444.87,352.41,256,Active
+263,Darkgray These 263,1,25,479.94,311.32,481,Active
+264,Seagreen Require 264,5,20,617.33,434.39,204,Active
+265,Springgreen Describe 265,8,10,497.29,368.35,46,Active
+266,Gainsboro Show 266,6,5,734.68,574.74,12,Active
+267,Palevioletred Above 267,1,17,792.26,586.99,222,Active
+268,Peru Movie 268,7,24,425.42,304.78,311,Active
+269,Mediumspringgreen Investment 269,2,14,1132.5,709.15,0,Out of Stock
+270,Teal Old 270,15,19,208.12,138.27,404,Active
+271,Whitesmoke Trip 271,15,25,815.03,580.57,362,Active
+272,Peachpuff Somebody 272,6,23,75.28,55.59,136,Active
+273,Coral Already 273,4,16,56.83,37.26,356,Active
+274,Violet Gun 274,1,23,674.76,535.88,493,Active
+275,Sienna Deep 275,11,5,303.86,210.89,440,Active
+276,Mediumturquoise Month 276,3,1,126.44,102.22,206,Active
+277,Oldlace Measure 277,7,23,738.18,473.07,106,Active
+278,Lightyellow Themselves 278,15,14,193.28,141.0,266,Active
+279,Hotpink Same 279,9,22,1019.09,710.45,395,Active
+280,Goldenrod Top 280,15,24,866.67,696.84,418,Active
