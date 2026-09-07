@@ -1,16 +1,16 @@
-CategoryID,CategoryName,Description,CategoryStatus
-1,Laptops & Computers,"Laptops, desktop PCs, and workstations",Active
-2,Monitors & Displays,"4K monitors, gaming displays, and stands",Active
-3,PC Components,"CPUs, GPUs, motherboards, and power supplies",Active
-4,Storage & Networking,"SSDs, external drives, and Wi-Fi routers",Active
-5,Audio & Headphones,Noise-canceling headphones and speakers,Active
-6,Smart Home Devices,"Smart speakers, cameras, and hubs",Active
-7,Wearables & Fitness,Smartwatches and fitness trackers,Active
-8,Gaming & Consoles,"Consoles, controllers, and VR headsets",Active
-9,Keyboards & Mice,Mechanical keyboards and ergonomic mice,Active
-10,Mobile & Tablets,"Tablets, smartphones, and accessories",Active
-11,Cameras & Video,"Mirrorless cameras, webcams, and tripods",Active
-12,Cables & Adapters,"HDMI cables, USB-C hubs, and adapters",Inactive
-13,Printers & Supplies,"Laser printers, ink cartridges, and paper",Active
-14,Power & Batteries,"UPS backups, power banks, and chargers",Active
-15,Office Tech Accessories,"Laptop bags, monitor arms, and desk mounts",Active
+CategoryID,CategoryName,Description,CategoryStatus,
+1,Laptops & Computers,Agent every development say.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (1, 'Laptops & Computers', 'Agent every development say.', 'Active');"
+2,Monitors & Displays,Beautiful instead ahead despite measure ago current.,Inactive,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (2, 'Monitors & Displays', 'Beautiful instead ahead despite measure ago current.', 'Inactive');"
+3,PC Components,Information last everything thank serve civil institution.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (3, 'PC Components', 'Information last everything thank serve civil institution.', 'Active');"
+4,Storage & Networking,Choice whatever from behavior benefit.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (4, 'Storage & Networking', 'Choice whatever from behavior benefit.', 'Active');"
+5,Audio & Headphones,Page southern role movie win her.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (5, 'Audio & Headphones', 'Page southern role movie win her.', 'Active');"
+6,Smart Home Devices,Fall pick those gun court attorney product.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (6, 'Smart Home Devices', 'Fall pick those gun court attorney product.', 'Active');"
+7,Wearables & Fitness,World talk term herself law.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (7, 'Wearables & Fitness', 'World talk term herself law.', 'Active');"
+8,Gaming & Consoles,Class great prove reduce raise author.,Inactive,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (8, 'Gaming & Consoles', 'Class great prove reduce raise author.', 'Inactive');"
+9,Keyboards & Mice,Move each left establish.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (9, 'Keyboards & Mice', 'Move each left establish.', 'Active');"
+10,Mobile & Tablets,Detail food shoulder argue start source husband.,Inactive,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (10, 'Mobile & Tablets', 'Detail food shoulder argue start source husband.', 'Inactive');"
+11,Cameras & Video,Decision wall then fire.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (11, 'Cameras & Video', 'Decision wall then fire.', 'Active');"
+12,Cables & Adapters,How trip learn enter east no enjoy.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (12, 'Cables & Adapters', 'How trip learn enter east no enjoy.', 'Active');"
+13,Printers & Supplies,Investment on gun young catch management sense technology.,Inactive,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (13, 'Printers & Supplies', 'Investment on gun young catch management sense technology.', 'Inactive');"
+14,Power & Batteries,Physical society instead as.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (14, 'Power & Batteries', 'Physical society instead as.', 'Active');"
+15,Office Tech Accessories,Other life edge network wall quite.,Active,"INSERT INTO dbo.Categories (CategoryID, CategoryName, Description, CategoryStatus) VALUES (15, 'Office Tech Accessories', 'Other life edge network wall quite.', 'Active');"

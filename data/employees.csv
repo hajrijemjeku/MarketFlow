@@ -1,41 +1,51 @@
 EmployeeID,FirstName,LastName,Email,Phone,Department,HireDate,EmployeeStatus
-1,Randall,Rocha,randall.rocha1@marketflow.com,(842)738-8496,Logistics & Order Processing,2023-08-17,Active
-2,Jeffrey,Bright,jeffrey.bright2@marketflow.com,610.212.2691x6697,Sales & B2B,2023-11-04,Active
-3,Erin,Wilson,erin.wilson3@marketflow.com,+1-645-414-6270,Account Management,2025-06-09,Active
-4,William,Rodriguez,william.rodriguez4@marketflow.com,289-332-5288x0957,Customer Support,2024-05-02,Active
-5,Sarah,Koch,sarah.koch5@marketflow.com,430-639-1171x8227,Logistics & Order Processing,2025-03-18,Active
-6,Allison,Obrien,allison.obrien6@marketflow.com,+1-534-565-7871,Account Management,2022-07-30,Active
-7,Caleb,Smith,caleb.smith7@marketflow.com,793.301.0310,Logistics & Order Processing,2024-01-12,Active
-8,Willie,Ramirez,willie.ramirez8@marketflow.com,582.399.7376,Account Management,2023-09-28,Active
-9,Collin,Jordan,collin.jordan9@marketflow.com,(870)410-6513x33872,Sales & B2B,2023-06-24,Inactive
-10,Joshua,Wright,joshua.wright10@marketflow.com,478-810-8013,Account Management,2025-08-08,Active
-11,Todd,Lewis,todd.lewis11@marketflow.com,9264064746,Customer Support,2023-05-19,Active
-12,James,Robinson,james.robinson12@marketflow.com,001-480-250-0978,Customer Support,2021-12-03,Active
-13,Susan,Miller,susan.miller13@marketflow.com,291-336-1939,Sales & B2B,2022-06-19,Inactive
-14,Robert,Silva,robert.silva14@marketflow.com,343-353-4624x75107,Account Management,2023-11-25,Active
-15,Amanda,Wagner,amanda.wagner15@marketflow.com,(613)354-2784x980,Account Management,2022-03-28,Active
-16,Sheila,Taylor,sheila.taylor16@marketflow.com,682-944-9353,Customer Support,2022-03-02,Inactive
-17,John,Odonnell,john.odonnell17@marketflow.com,964-800-5242,Logistics & Order Processing,2021-11-21,Active
-18,Ann,Rodriguez,ann.rodriguez18@marketflow.com,001-728-205-9826x204,Customer Support,2025-06-06,Active
-19,Rachel,Clark,rachel.clark19@marketflow.com,+1-815-586-9232x26025,Customer Support,2022-09-26,Active
-20,Joseph,Cobb,joseph.cobb20@marketflow.com,(707)633-7543x3036,Sales & B2B,2022-02-18,Active
-21,Michelle,Rasmussen,michelle.rasmussen21@marketflow.com,(386)885-0142x940,Account Management,2022-11-11,Active
-22,Michael,Hartman,michael.hartman22@marketflow.com,+1-581-769-3406x088,Account Management,2023-07-13,Active
-23,Ryan,Rush,ryan.rush23@marketflow.com,895-814-8465x64823,Account Management,2025-08-04,Active
-24,Erica,Orr,erica.orr24@marketflow.com,001-746-980-4436,Customer Support,2024-04-17,Active
-25,Scott,Lowe,scott.lowe25@marketflow.com,221.248.9513x4332,Logistics & Order Processing,2023-11-07,Active
-26,John,Alvarez,john.alvarez26@marketflow.com,001-517-469-3676x32016,Logistics & Order Processing,2025-04-16,Active
-27,Linda,Dominguez,linda.dominguez27@marketflow.com,7839172788,Sales & B2B,2023-08-26,Active
-28,Cheyenne,Ball,cheyenne.ball28@marketflow.com,(387)627-7434x87347,Logistics & Order Processing,2023-10-28,Active
-29,Jimmy,Rogers,jimmy.rogers29@marketflow.com,+1-812-823-6231,Customer Support,2025-06-22,Active
-30,Mark,Owens,mark.owens30@marketflow.com,766.690.9670,Customer Support,2021-12-09,Active
-31,Karen,Castaneda,karen.castaneda31@marketflow.com,(488)993-7346x70656,Sales & B2B,2025-03-25,Active
-32,Samantha,Hooper,samantha.hooper32@marketflow.com,4692901627,Logistics & Order Processing,2023-12-12,Active
-33,Jorge,Murphy,jorge.murphy33@marketflow.com,256-246-4170x80531,Account Management,2023-08-11,Active
-34,Stefanie,Gonzalez,stefanie.gonzalez34@marketflow.com,+1-323-427-1937x452,Sales & B2B,2021-10-05,Active
-35,Tami,Rodriguez,tami.rodriguez35@marketflow.com,296-763-1931x4919,Sales & B2B,2021-10-13,Active
-36,Amanda,Stanley,amanda.stanley36@marketflow.com,950.967.1657x26284,Logistics & Order Processing,2021-12-20,Active
-37,Ryan,Simon,ryan.simon37@marketflow.com,431-947-3799x65075,Account Management,2022-10-25,Active
-38,Jason,Salinas,jason.salinas38@marketflow.com,594-980-8313x678,Sales & B2B,2023-02-14,Active
-39,Debbie,Henry,debbie.henry39@marketflow.com,9147363495,Sales & B2B,2025-01-17,Active
-40,Ronald,Reese,ronald.reese40@marketflow.com,(574)544-3135x182,Logistics & Order Processing,2023-01-30,Active
+1,Brian,Garcia,emp_1@colon.com,,Customer Support,2021-08-09,Active
+2,Erika,Jackson,emp_2@pearson.com,,Customer Support,2021-02-20,Active
+3,Maxwell,King,emp_3@harper.com,4323041037,IT,2020-06-19,Active
+4,Vanessa,Stout,emp_4@gibson.info,251-426-3700x79633,Sales,2021-05-07,Inactive
+5,Michael,Owens,emp_5@kim-patel.org,(512)674-6213,Customer Support,2023-02-06,Active
+6,Barbara,Love,emp_6@thompson.biz,,IT,2022-12-24,Active
+7,Raymond,Brown,emp_7@harper.com,+1-809-594-4147x537,Logistics,2023-11-04,Active
+8,Kathleen,Meadows,emp_8@bailey.com,001-285-786-4766x95577,Customer Support,2020-12-31,Active
+9,Ann,Hensley,emp_9@foster.org,(945)211-5905x92568,Customer Support,2022-08-22,Active
+10,Monique,Coleman,emp_10@bernard-porter.com,4807466063,IT,2020-04-08,Active
+11,Jennifer,Garcia,emp_11@hines.com,+1-420-692-2521x2380,IT,2022-04-04,Active
+12,Holly,Reyes,emp_12@villanueva.com,614-787-4971x51295,Logistics,2024-10-06,Active
+13,Carmen,Cross,emp_13@edwards.com,,Sales,2022-10-26,Inactive
+14,Vincent,Guerrero,emp_14@lynch.com,,Logistics,2023-09-08,Active
+15,Brittany,Walker,emp_15@nielsen-brewer.org,001-352-328-7512x090,Sales,2024-03-22,Active
+16,Elizabeth,Webster,emp_16@wright-brown.com,,Logistics,2022-06-11,Active
+17,Patricia,Henderson,emp_17@henderson.org,,IT,2024-08-13,Active
+18,Chelsey,Davis,emp_18@edwards.com,+1-559-661-9740x05975,Sales,2022-06-22,Active
+19,Michael,Moss,emp_19@davis.com,,IT,2021-05-21,Active
+20,Alvin,Hicks,emp_20@cervantes-walter.com,+1-465-749-0787,IT,2022-10-19,Active
+21,Austin,Brooks,emp_21@cook.org,8932757707,Customer Support,2023-06-02,Active
+22,Christopher,Santiago,emp_22@hill.com,(784)483-6955,Customer Support,2024-02-13,Active
+23,Steven,Brown,emp_23@aguilar-bradford.com,(891)356-9490x60827,Logistics,2020-03-01,Active
+24,Alex,Dawson,emp_24@olsen-barrett.com,+1-645-596-9157x349,IT,2024-10-13,Active
+25,Michael,Walters,emp_25@gonzalez-woods.org,349.313.8787x01881,Sales,2021-12-17,Active
+26,Jesus,Kennedy,emp_26@rich-mayer.com,914.332.4170,Sales,2021-03-25,Active
+27,Tracy,Washington,emp_27@butler.org,+1-608-613-2208x2204,Logistics,2022-01-13,Active
+28,Michelle,Rodriguez,emp_28@robertson-mcdowell.net,464-795-7104,IT,2020-02-22,Active
+29,Alexis,Casey,emp_29@lopez.com,501.283.1377x4340,IT,2022-11-26,Active
+30,Joanne,Kennedy,emp_30@rivera.com,333.735.8136x8220,IT,2021-04-29,Active
+31,Christie,Pennington,emp_31@jensen-tran.com,,Customer Support,2023-06-09,Active
+32,Gregory,Davis,emp_32@smith-brown.com,8826124076,Logistics,2022-11-15,Active
+33,Elizabeth,Lewis,emp_33@clayton.com,001-235-401-1344x96895,IT,2024-10-16,Active
+34,Christopher,Bryan,emp_34@hicks-richards.org,254-694-9725x472,Customer Support,2024-02-29,Active
+35,John,Flowers,emp_35@shelton.com,(839)749-0465x14444,Sales,2024-02-15,Inactive
+36,Kyle,Jones,emp_36@stevenson-moore.com,,Customer Support,2024-05-08,Active
+37,Katelyn,Ferguson,emp_37@evans-stewart.com,+1-693-404-3178,Logistics,2020-08-25,Active
+38,John,Carlson,emp_38@frank.org,+1-975-348-3937x772,Customer Support,2023-01-29,Active
+39,John,Hernandez,emp_39@wilson-cowan.com,001-938-434-1247x223,IT,2020-05-15,Active
+40,Sean,Sloan,emp_40@webb.com,(332)239-9887x73352,Customer Support,2024-07-07,Active
+41,Matthew,Moreno,emp_41@stevens.com,(332)318-9451x08858,Customer Support,2020-11-05,Active
+42,Lauren,Guzman,emp_42@white-wilson.net,742.706.4339,Customer Support,2021-08-07,Active
+43,Lisa,Gonzalez,emp_43@elliott-chavez.com,001-297-220-4093x24243,IT,2020-09-08,Active
+44,Erin,Church,emp_44@walker-bennett.com,(943)508-7244,Customer Support,2024-11-14,Active
+45,Jillian,Livingston,emp_45@huang.com,(479)989-6910x241,Customer Support,2021-05-20,Active
+46,Wendy,Carter,emp_46@ward.org,001-915-928-3119,Logistics,2024-04-23,Active
+47,Barbara,Rodriguez,emp_47@howard-sloan.com,+1-900-854-4027,Sales,2020-07-02,Active
+48,Dave,Grimes,emp_48@davis.com,,IT,2024-01-04,Active
+49,Micheal,Johnson,emp_49@smith.biz,001-685-774-3973x84718,Sales,2024-04-11,Active
+50,Charles,Price,emp_50@frost.com,001-718-323-6372,Logistics,2020-10-17,Active

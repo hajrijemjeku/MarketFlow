@@ -1,141 +1,212 @@
-import os
 import csv
+import os
 import random
+import sys
 from datetime import datetime, timedelta
 from faker import Faker
 
-# Fixed seed for reproducible output
+# Initialize Faker with seed for full reproducibility
 fake = Faker()
 Faker.seed(42)
 random.seed(42)
 
-OUTPUT_DIR = "data"
+# Ensure output directory exists
+os.makedirs("data", exist_ok=True)
+
+print("==================================================================")
+print("  MARKETFLOW ENTERPRISE DATA GENERATOR & VALIDATION PIPELINE")
+print("==================================================================\n")
+
+# =============================================================================
+# CONFIGURATION & PARAMETERS
+# =============================================================================
+NUM_CUSTOMERS = 2500
+NUM_BUYING_CUSTOMERS = 2200  # Exactly 300 customers never order
 
 NUM_CATEGORIES = 15
-NUM_SUPPLIERS = 25
-NUM_EMPLOYEES = 40
-NUM_CUSTOMERS = 1800
-NUM_PRODUCTS = 280
-NUM_ORDERS = 13500
+NUM_SUPPLIERS = 20
 
-print("Initializing MarketFlow Data Generation Engine...")
+NUM_PRODUCTS = 400
+NUM_SOLD_PRODUCTS = 350      # Exactly 50 products never sell
+
+NUM_EMPLOYEES = 50
+NUM_ORDERS = 20000
+
+# Order Date Horizon
+START_DATE = datetime(2023, 1, 1, 0, 0, 0)
+END_DATE = datetime(2026, 8, 31, 23, 59, 59)
+
+# Monthly Seasonality Weights (Jan - Dec)
+MONTH_WEIGHTS = [7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 14, 16]
+
+# Allowed Vocabularies
+ALLOWED_ORDER_STATUS = {"Delivered", "Shipped", "Processing", "Pending", "Cancelled"}
+ALLOWED_PAYMENT_STATUS = {"Completed", "Pending", "Failed", "Refunded"}
+ALLOWED_PAYMENT_METHODS = {'Credit Card', 'Debit Card', 'PayPal', 'Bank Transfer', 'Cash on Delivery'}
+ALLOWED_SHIPMENT_STATUS = {"Delivered", "In Transit", "Pending", "Cancelled"}
+ALLOWED_SHIPPING_METHODS = {'Standard Ground', 'Express Courier', 'Next-Day Air'}
+ALLOWED_RETURN_STATUS = {"Requested", "Approved", "Rejected", "Completed"}
+
+ALLOWED_CUSTOMER_STATUS = {"Active", "Inactive"}
+ALLOWED_EMPLOYEE_STATUS = {"Active", "Inactive"}
+ALLOWED_PRODUCT_STATUS = {"Active", "Out of Stock", "Discontinued"}
+ALLOWED_CATEGORY_STATUS = {"Active", "Inactive"}
+
+def make_dirty_text(text, probability=0.15):
+    """Helper to inject whitespace or casing variations for text normalization exercises."""
+    if random.random() < probability:
+        choices = [
+            f" {text.lower()}",       # " germany"
+            text.upper(),             # "GERMANY"
+            f"{text.capitalize()} ",  # "Germany "
+            text.lower()              # "germany"
+        ]
+        return random.choice(choices)
+    return text
+
+def generate_seasonal_date(c_reg_date):
+    """Generates an order date honoring registration date and monthly seasonality."""
+    while True:
+        year = random.randint(c_reg_date.year, END_DATE.year)
+        month = random.choices(range(1, 13), weights=MONTH_WEIGHTS, k=1)[0]
+        
+        # Days in month logic
+        if month in [1, 3, 5, 7, 8, 10, 12]:
+            max_days = 31
+        elif month in [4, 6, 9, 11]:
+            max_days = 30
+        else:
+            max_days = 29 if (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)) else 28
+            
+        day = random.randint(1, max_days)
+        hour = random.randint(7, 22)
+        minute = random.randint(0, 59)
+        second = random.randint(0, 59)
+        
+        candidate_date = datetime(year, month, day, hour, minute, second)
+        
+        if c_reg_date <= candidate_date <= END_DATE:
+            return candidate_date
 
 # =============================================================================
-# 1. CATEGORIES (15 Rows - Category 12 set to 'Inactive')
+# 1. CATEGORIES & SUPPLIERS
 # =============================================================================
-categories_data = [
-    (1, "Laptops & Computers", "Laptops, desktop PCs, and workstations", "Active"),
-    (2, "Monitors & Displays", "4K monitors, gaming displays, and stands", "Active"),
-    (3, "PC Components", "CPUs, GPUs, motherboards, and power supplies", "Active"),
-    (4, "Storage & Networking", "SSDs, external drives, and Wi-Fi routers", "Active"),
-    (5, "Audio & Headphones", "Noise-canceling headphones and speakers", "Active"),
-    (6, "Smart Home Devices", "Smart speakers, cameras, and hubs", "Active"),
-    (7, "Wearables & Fitness", "Smartwatches and fitness trackers", "Active"),
-    (8, "Gaming & Consoles", "Consoles, controllers, and VR headsets", "Active"),
-    (9, "Keyboards & Mice", "Mechanical keyboards and ergonomic mice", "Active"),
-    (10, "Mobile & Tablets", "Tablets, smartphones, and accessories", "Active"),
-    (11, "Cameras & Video", "Mirrorless cameras, webcams, and tripods", "Active"),
-    (12, "Cables & Adapters", "HDMI cables, USB-C hubs, and adapters", "Inactive"), # Retired category (tests CK_Categories_Status)
-    (13, "Printers & Supplies", "Laser printers, ink cartridges, and paper", "Active"),
-    (14, "Power & Batteries", "UPS backups, power banks, and chargers", "Active"),
-    (15, "Office Tech Accessories", "Laptop bags, monitor arms, and desk mounts", "Active")
+category_names = [
+    "Laptops & Computers", "Monitors & Displays", "PC Components", "Storage & Networking",
+    "Audio & Headphones", "Smart Home Devices", "Wearables & Fitness", "Gaming & Consoles",
+    "Keyboards & Mice", "Mobile & Tablets", "Cameras & Video", "Cables & Adapters",
+    "Printers & Supplies", "Power & Batteries", "Office Tech Accessories"
 ]
 
-categories = [
-    {"CategoryID": cid, "CategoryName": name, "Description": desc, "CategoryStatus": status}
-    for cid, name, desc, status in categories_data
-]
+categories = []
+for cid, name in enumerate(category_names, 1):
+    categories.append({
+        "CategoryID": cid,
+        "CategoryName": name,
+        "Description": fake.sentence(),
+        "CategoryStatus": "Active" if random.random() > 0.10 else "Inactive"
+    })
 
-# =============================================================================
-# 2. SUPPLIERS (25 Rows - Strict Schema Compliance)
-# =============================================================================
 suppliers = []
 for sid in range(1, NUM_SUPPLIERS + 1):
-    company = fake.company().replace(",", "").replace("'", "")
-    clean_name = f"{company}_{sid}" # Ensures uniqueness
-    email = f"contact@{clean_name.lower().replace(' ', '')[:15]}.com"
+    email = f"contact_{sid}@{fake.domain_name()}"
     suppliers.append({
         "SupplierID": sid,
-        "SupplierName": clean_name,
+        "SupplierName": fake.company(),
         "ContactEmail": email,
-        "Country": random.choice(["United States", "Taiwan", "China", "South Korea", "Germany", "Japan"])
+        "Country": make_dirty_text(random.choice(["Germany", "USA", "Albania", "UK", "Japan"]), probability=0.25)
     })
 
 # =============================================================================
-# 3. EMPLOYEES (40 Rows - Strict Schema Compliance)
-# =============================================================================
-employees = []
-departments = ["Customer Support", "Logistics & Order Processing", "Account Management", "Sales & B2B"]
-
-for eid in range(1, NUM_EMPLOYEES + 1):
-    first = fake.first_name()
-    last = fake.last_name()
-    email = f"{first.lower()}.{last.lower()}{eid}@marketflow.com"
-    dept = random.choice(departments)
-    hire_date = fake.date_between(start_date="-5y", end_date="-1y").strftime("%Y-%m-%d")
-    status = "Active" if random.random() > 0.10 else "Inactive" # Matches CK_Employees_Status
-    
-    employees.append({
-        "EmployeeID": eid,
-        "FirstName": first,
-        "LastName": last,
-        "Email": email,
-        "Phone": fake.phone_number()[:25],
-        "Department": dept,
-        "HireDate": hire_date,
-        "EmployeeStatus": status
-    })
-
-# Active employees pool for realistic order assignment
-active_employee_ids = [e["EmployeeID"] for e in employees if e["EmployeeStatus"] == "Active"]
-
-# =============================================================================
-# 4. CUSTOMERS (1,800 Rows)
+# 2. CUSTOMERS
 # =============================================================================
 customers = []
+customer_reg_dates = {}
+
 for cid in range(1, NUM_CUSTOMERS + 1):
-    first = fake.first_name()
-    last = fake.last_name()
-    email = f"{first.lower()}.{last.lower()}{cid}@{fake.free_email_domain()}"
-    phone = "" if random.random() < 0.15 else fake.phone_number()[:25]
-    dob = fake.date_of_birth(minimum_age=18, maximum_age=70).strftime("%Y-%m-%d")
-    reg_date = fake.date_time_between(start_date="-3y", end_date="-6m").strftime("%Y-%m-%d %H:%M:%S")
-    
+    gender = random.choice(["Male", "Female", None]) if random.random() > 0.15 else None
+    phone = fake.phone_number()[:25] if random.random() > 0.20 else None
+    city = fake.city() if random.random() > 0.10 else None
+    country = make_dirty_text(random.choice(["Germany", "Kosovo", "Albania", "USA", "Switzerland"]), probability=0.20) if random.random() > 0.05 else None
+
+    reg_date = fake.date_time_between(start_date=START_DATE, end_date=END_DATE - timedelta(days=30))
+    customer_reg_dates[cid] = reg_date
+
     customers.append({
         "CustomerID": cid,
-        "FirstName": first,
-        "LastName": last,
-        "Email": email,
+        "FirstName": fake.first_name(),
+        "LastName": fake.last_name(),
+        "Email": f"cust_{cid}_{fake.unique.email()}",
         "Phone": phone,
-        "DateOfBirth": dob,
-        "Gender": random.choice(["Male", "Female", "Non-Binary"]),
-        "City": fake.city(),
-        "Country": random.choice(["United States", "Canada", "United Kingdom", "Germany"]),
-        "RegistrationDate": reg_date,
-        "CustomerStatus": "Active" if random.random() > 0.05 else "Inactive"
+        "DateOfBirth": fake.date_of_birth(minimum_age=18, maximum_age=70).isoformat(),
+        "Gender": gender,
+        "City": city,
+        "Country": country,
+        "RegistrationDate": reg_date.isoformat(),
+        "CustomerStatus": "Active" if random.random() > 0.12 else "Inactive"
     })
 
 # =============================================================================
-# 5. PRODUCTS (280 Rows)
+# 3. EMPLOYEES & ACTIVE FILTERING
 # =============================================================================
+employees = []
+active_employee_ids = []
+departments = ["Sales", "Logistics", "Customer Support", "IT"]
+
+for eid in range(1, NUM_EMPLOYEES + 1):
+    emp_status = "Active" if random.random() > 0.08 else "Inactive"
+    if emp_status == "Active":
+        active_employee_ids.append(eid)
+
+    employees.append({
+        "EmployeeID": eid,
+        "FirstName": fake.first_name(),
+        "LastName": fake.last_name(),
+        "Email": f"emp_{eid}@{fake.domain_name()}",
+        "Phone": fake.phone_number()[:25] if random.random() > 0.25 else None,
+        "Department": random.choice(departments),
+        "HireDate": fake.date_between(start_date=datetime(2020, 1, 1), end_date=datetime(2025, 1, 1)).isoformat(),
+        "EmployeeStatus": emp_status
+    })
+
+# =============================================================================
+# 4. PRODUCTS & BEHAVIORAL WEIGHTING
+# =============================================================================
+PRODUCT_TEMPLATES = {
+    1: ("VoltBook Pro 14", "Apex Workstation 16", "Titan Desktop PC", "FlexBook Air"),
+    2: ("VisionMax 27\"", "UltraView 4K 32\"", "ProDisplay HD 24\"", "GamingView 144Hz"),
+    3: ("CoreStrike i7 CPU", "Vortex RTX GPU", "Prime Z690 Motherboard", "PowerCore 750W"),
+    4: ("FastStore NVMe SSD", "CloudLink Wi-Fi 6 Router", "DataVault External HD", "SpeedPro NAS"),
+    5: ("SoundWave Pro Headphones", "SoundWave Mini Speaker", "AudioPulse Wireless Earbuds", "StudioBass Soundbar"),
+    6: ("SmartHub Central", "SecureCam Outdoor 4K", "EcoGlow Smart Bulb", "SmartThermo V2"),
+    7: ("PulseBand Fitness Tracker", "Chronos Smartwatch Pro", "FitActive GPS Watch", "PulseRing Sport"),
+    8: ("GameBox X Console", "ProGrip Controller", "VRVerse Headset", "ArcadeFight Stick"),
+    9: ("MechType RGB Keyboard", "PrecisionClick Mouse", "ErgoPad Wrist Rest", "MacroDeck 12-Key"),
+    10: ("TechNova X1 Smartphone", "TabPro 10.5 Tablet", "TechNova Lite 5G", "FoldTech Duo"),
+    11: ("ProLens Mirrorless Camera", "ClearStream 4K Webcam", "FlexiPod Tripod", "CineLight Ring LED"),
+    12: ("UltraLink HDMI Cable", "MultiHub USB-C Adapter", "PowerSync Braided Cable", "DisplayPort Adapter"),
+    13: ("LaserJet Pro Printer", "ColorInk XL Cartridge", "EcoPaper 500-Sheet Ream", "ScanMaster Scanner"),
+    14: ("PowerMax 20K Power Bank", "VoltGuard UPS Battery", "FastCharge 65W Plug", "SolarPower Pad"),
+    15: ("ErgoArm Dual Mount", "ProCarry Laptop Bag", "DeskFlex Leather Mat", "CableClean Tray")
+}
+
 products = []
 for pid in range(1, NUM_PRODUCTS + 1):
     cat_id = random.randint(1, NUM_CATEGORIES)
     sup_id = random.randint(1, NUM_SUPPLIERS)
-    cost = round(random.uniform(10.0, 800.0), 2)
-    price = round(cost * random.uniform(1.20, 1.60), 2)
     
-    rand_st = random.random()
-    if rand_st < 0.08:
-        status, stock = "Discontinued", 0
-    elif rand_st < 0.16:
-        status, stock = "Out of Stock", 0
-    else:
-        status, stock = "Active", random.randint(10, 500)
-        
+    base_name = random.choice(PRODUCT_TEMPLATES[cat_id])
+    product_name = f"{base_name} (v{pid})"
+    
+    cost = round(random.uniform(5.0, 700.0), 2)
+    price = round(cost * random.uniform(1.25, 1.75), 2)
+    
+    stock = 0 if random.random() < 0.15 else random.randint(10, 500)
+    status = "Discontinued" if stock == 0 and random.random() < 0.5 else ("Out of Stock" if stock == 0 else "Active")
+    
     products.append({
         "ProductID": pid,
-        "ProductName": f"{fake.color_name().capitalize()} {fake.word().capitalize()} {pid}",
+        "ProductName": product_name,
         "CategoryID": cat_id,
         "SupplierID": sup_id,
         "Price": price,
@@ -144,310 +215,437 @@ for pid in range(1, NUM_PRODUCTS + 1):
         "ProductStatus": status
     })
 
+sold_product_ids = list(range(1, NUM_SOLD_PRODUCTS + 1))
+product_weights = [100 if pid <= 30 else (20 if pid <= 150 else 3) for pid in sold_product_ids]
+
+buying_customer_ids = list(range(1, NUM_BUYING_CUSTOMERS + 1))
+customer_weights = [50 if cid <= 100 else (10 if cid <= 600 else 2) for cid in buying_customer_ids]
+
 # =============================================================================
-# 6. TRANSACTIONAL POOLS & WEIGHTING SETUP
+# 5. ORDERS, PAYMENTS, & SHIPMENTS
 # =============================================================================
+orders = []
+payments = []
+shipments = []
 
-# Customers Who Never Order (15% = 270 customers)
-purchasing_customers = list(range(1, 1531))
+order_status_choices = ["Delivered", "Shipped", "Processing", "Pending", "Cancelled"]
+order_status_weights = [0.70, 0.08, 0.07, 0.07, 0.08]
 
-# Customer Order Frequency Skew
-# Customers are assigned different purchase propensities rather than fixed order counts.
-low_frequency = purchasing_customers[:765]
-medium_frequency = purchasing_customers[765:1346]
-high_frequency = purchasing_customers[1346:]
-customer_pool = (low_frequency * 1) + (medium_frequency * 3) + (high_frequency * 10)
+payment_methods = list(ALLOWED_PAYMENT_METHODS)
+shipping_methods = list(ALLOWED_SHIPPING_METHODS)
 
-# Product Sales Skew
-# Top 20% of selling products receive substantially higher selection probability.
-selling_products = products[:258] # Products 259-280 never sell
-top_prods = selling_products[:52]
-other_prods = selling_products[52:]
-product_pool = (top_prods * 16) + (other_prods * 1)
+# Step A: Guarantee exactly 1 order for every buying customer (1 to 2,200)
+order_customer_assignments = list(buying_customer_ids)
 
-orders, order_details, payments, shipments, returns = [], [], [], [], []
+# Step B: Distribute remaining orders via weighted sampling
+remaining_orders_count = NUM_ORDERS - NUM_BUYING_CUSTOMERS
+sampled_customers = random.choices(buying_customer_ids, weights=customer_weights, k=remaining_orders_count)
+order_customer_assignments.extend(sampled_customers)
 
-od_counter = 1
-shipment_counter = 1
-payment_counter = 1
-return_counter = 1
+# Step C: Shuffle to interleave order sequence
+random.shuffle(order_customer_assignments)
 
-month_weights = {1: 0.7, 2: 0.7, 3: 0.9, 4: 0.9, 5: 1.0, 6: 1.0, 7: 1.4, 8: 1.0, 9: 1.0, 10: 1.1, 11: 2.2, 12: 2.2}
+tracking_numbers_used = set()
 
-print("Generating Orders, Details, Payments, Shipments, and Returns (2023-2026 timeframe)...")
-
-CUTOFF_DATE = datetime(2026, 9, 1, 23, 59, 59)
-
-for oid in range(1, NUM_ORDERS + 1):
-    cust_id = random.choice(customer_pool)
-    cust_reg = datetime.strptime(customers[cust_id - 1]["RegistrationDate"], "%Y-%m-%d %H:%M:%S")
+for oid, cid in enumerate(order_customer_assignments, 1):
+    eid = random.choice(active_employee_ids) if random.random() > 0.30 else None
     
-    # Generate OrderDate between 2023 and Sept 2026 after Customer Registration
-    # Generate OrderDate between customer registration and cutoff date directly
-    start_dt = max(cust_reg, datetime(2023, 1, 1))
-    if start_dt >= CUTOFF_DATE:
-        start_dt = CUTOFF_DATE - timedelta(days=30)
-    
-    delta_seconds = int((CUTOFF_DATE - start_dt).total_seconds())
-    random_seconds = random.randint(0, max(0, delta_seconds))
-    order_date_dt = start_dt + timedelta(seconds=random_seconds)
+    c_reg_date = customer_reg_dates[cid]
+    order_date = generate_seasonal_date(c_reg_date)
 
-    order_date_str = order_date_dt.strftime("%Y-%m-%d %H:%M:%S")
+    o_status = random.choices(order_status_choices, weights=order_status_weights, k=1)[0]
     
-    # 80% automated (NULL EmployeeID), 20% manually processed by Active employees
-    emp_id = "" if random.random() < 0.80 else str(random.choice(active_employee_ids))
-    
-    order_status = random.choices(
-        ["Delivered", "Shipped", "Processing", "Pending", "Cancelled"],
-        weights=[0.65, 0.12, 0.08, 0.08, 0.07]
-    )[0]
-
-    cust_ref = customers[cust_id - 1]
     orders.append({
         "OrderID": oid,
-        "CustomerID": cust_id,
-        "EmployeeID": emp_id,
-        "OrderDate": order_date_str,
-        "OrderStatus": order_status,
+        "CustomerID": cid,
+        "EmployeeID": eid,
+        "OrderDate": order_date.isoformat(),
+        "OrderStatus": o_status,
         "ShippingAddress": fake.street_address(),
-        "ShippingCity": cust_ref["City"],
-        "ShippingCountry": cust_ref["Country"]
+        "ShippingCity": fake.city(),
+        "ShippingCountry": make_dirty_text(random.choice(["Germany", "Kosovo", "Albania", "USA", "Switzerland"]), probability=0.15)
     })
 
-    # Shipments Setup
-    act_del_dt = None
-    if order_status in ["Shipped", "Delivered"]:
-        ship_date_dt = order_date_dt + timedelta(days=random.randint(1, 2))
-        ship_date_str = ship_date_dt.strftime("%Y-%m-%d %H:%M:%S")
-        est_del_str = (ship_date_dt + timedelta(days=4)).strftime("%Y-%m-%d")
-        
-        if order_status == "Delivered":
-            act_del_dt = ship_date_dt + timedelta(days=random.randint(2, 5))
-            act_del_str = act_del_dt.strftime("%Y-%m-%d")
-            shipment_status = "Delivered"
-        else:
-            act_del_str = ""
-            shipment_status = "In Transit"
-            
-        shipments.append({
-            "ShipmentID": shipment_counter,
-            "OrderID": oid,
-            "ShipmentDate": ship_date_str,
-            "EstimatedDeliveryDate": est_del_str,
-            "ActualDeliveryDate": act_del_str,
-            "ShippingMethod": random.choice(["Standard Ground", "Express Courier", "Next-Day Air"]),
-            "TrackingNumber": f"TRK-{oid}-{shipment_counter}",
-            "ShipmentStatus": shipment_status
-        })
-        shipment_counter += 1
+    # Payment Status Logic
+    if o_status in ["Delivered", "Shipped"]:
+        p_status = "Completed"
+    elif o_status == "Cancelled":
+        p_status = "Failed" if random.random() < 0.85 else "Refunded"
+    else:
+        p_status = "Pending" if random.random() < 0.90 else "Completed"
 
-    # OrderDetails Target Scale (~2.25 line items per order -> ~30,375 details)
-    num_items = random.choices([1, 2, 3, 4, 5], weights=[0.30, 0.35, 0.20, 0.10, 0.05])[0]
+    payments.append({
+        "PaymentID": oid,
+        "OrderID": oid,
+        "PaymentDate": (order_date + timedelta(minutes=random.randint(1, 30))).isoformat(),
+        "PaymentMethod": random.choice(payment_methods),
+        "PaymentAmount": 0.0,  # Calculated after OrderDetails
+        "PaymentStatus": p_status,
+        "TransactionReference": f"TXN-{fake.uuid4()[:8].upper()}" if p_status in ["Completed", "Refunded"] else None
+    })
     
-    # Sample distinct products per order
-    chosen_prods = []
-    while len(chosen_prods) < num_items:
-        candidate = random.choice(product_pool)
-        if candidate["ProductID"] not in [p["ProductID"] for p in chosen_prods]:
-            chosen_prods.append(candidate)
+    # Shipment Timeline Logic
+    if o_status in ["Delivered", "Shipped"]:
+        ship_date = order_date + timedelta(days=random.randint(1, 2))
+        est_delivery = ship_date + timedelta(days=random.randint(3, 7))
+        act_delivery = est_delivery - timedelta(days=random.randint(0, 2)) if o_status == "Delivered" else None
+        s_status = "Delivered" if o_status == "Delivered" else "In Transit"
+        
+        while True:
+            trk = f"TRK-{fake.uuid4()[:10].upper()}"
+            if trk not in tracking_numbers_used:
+                tracking_numbers_used.add(trk)
+                break
+    else:
+        ship_date, est_delivery, act_delivery = None, None, None
+        s_status = "Pending" if o_status != "Cancelled" else "Cancelled"
+        trk = None
+        
+    shipments.append({
+        "ShipmentID": oid,
+        "OrderID": oid,
+        "ShipmentDate": ship_date.isoformat() if ship_date else None,
+        "EstimatedDeliveryDate": est_delivery.date().isoformat() if est_delivery else None,
+        "ActualDeliveryDate": act_delivery.date().isoformat() if act_delivery else None,
+        "ShippingMethod": random.choice(shipping_methods),
+        "TrackingNumber": trk,
+        "ShipmentStatus": s_status
+    })
+
+shipment_objects = {s["OrderID"]: s for s in shipments}
+
+# =============================================================================
+# 6. ORDER DETAILS & RETURNS
+# =============================================================================
+order_details = []
+returns = []
+
+od_id_counter = 1
+return_id_counter = 1
+
+return_reasons = ["Defective Item", "Wrong Size/Color", "Late Delivery", "Buyer Remorse", "Not as Described"]
+return_statuses = list(ALLOWED_RETURN_STATUS)
+
+sold_product_assignments = list(sold_product_ids)
+
+for o in orders:
+    oid = o["OrderID"]
+    o_status = o["OrderStatus"]
     
+    num_items = random.randint(1, 5)
+    
+    selected_products = []
+    while sold_product_assignments and len(selected_products) < num_items:
+        p_needed = sold_product_assignments.pop()
+        selected_products.append(p_needed)
+        
+    if len(selected_products) < num_items:
+        pool = [p for p in sold_product_ids if p not in selected_products]
+        weights = [product_weights[p - 1] for p in pool]
+        needed = num_items - len(selected_products)
+        for _ in range(needed):
+            chosen = random.choices(pool, weights=weights, k=1)[0]
+            idx = pool.index(chosen)
+            pool.pop(idx)
+            weights.pop(idx)
+            selected_products.append(chosen)
+
     order_total = 0.0
-
-    for prod in chosen_prods:
-        qty = random.choices([1, 2, 3, 4, 5], weights=[0.60, 0.25, 0.10, 0.03, 0.02])[0]
-        unit_price = prod["Price"]
-        discount = random.choices([0.00, 5.00, 10.00, 15.00, 20.00], weights=[0.70, 0.10, 0.10, 0.05, 0.05])[0]
+    
+    for pid in selected_products:
+        p = products[pid - 1]
+        qty = random.randint(1, 4)
+        unit_price = p["Price"]
+        discount = random.choice([0.0, 0.0, 0.0, 5.0, 10.0, 15.0])
         
-        line_total = (unit_price * qty) * (1.0 - (discount / 100.0))
+        line_total = (unit_price * (1 - discount / 100.0)) * qty
         order_total += line_total
         
-        od_id = od_counter
         order_details.append({
-            "OrderDetailID": od_id,
+            "OrderDetailID": od_id_counter,
             "OrderID": oid,
-            "ProductID": prod["ProductID"],
+            "ProductID": pid,
             "Quantity": qty,
             "UnitPrice": unit_price,
             "Discount": discount
         })
-        od_counter += 1
-
-        # Returns (Delivered orders only; ~5.0% probability per delivered line item -> approximately 1,000 returns)
-        if order_status == "Delivered" and act_del_dt is not None and random.random() < 0.05:
-            return_qty = random.randint(1, qty)
-            return_date = (act_del_dt + timedelta(days=random.randint(1, 14))).strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Return Date logically chained: ReturnDate >= ActualDeliveryDate
+        if o_status == "Delivered" and random.random() < 0.05:
+            act_del_str = shipment_objects[oid]["ActualDeliveryDate"]
+            act_del_dt = datetime.fromisoformat(act_del_str)
+            return_dt = act_del_dt + timedelta(days=random.randint(1, 14))
+            
+            ret_qty = random.randint(1, qty)
             returns.append({
-                "ReturnID": return_counter,
-                "OrderDetailID": od_id,
-                "ReturnDate": return_date,
-                "ReturnQuantity": return_qty,
-                "ReturnReason": random.choice(["Defective", "Changed Mind", "Incorrect Item", "Late Arrival"]),
-                "ReturnStatus": random.choice(["Requested", "Approved", "Rejected", "Completed"])
+                "ReturnID": return_id_counter,
+                "OrderDetailID": od_id_counter,
+                "ReturnDate": return_dt.isoformat(),
+                "ReturnQuantity": ret_qty,
+                "ReturnReason": random.choice(return_reasons) if random.random() > 0.15 else None,
+                "ReturnStatus": random.choice(return_statuses)
             })
-            return_counter += 1
-
-    # Payments
-    pay_method = random.choice(["Credit Card", "Debit Card", "PayPal", "Bank Transfer", "Cash on Delivery"])
-    if order_status == "Cancelled":
-        pay_status = random.choice(["Failed", "Refunded"])
-    elif order_status in ["Pending", "Processing"]:
-        pay_status = random.choice(["Completed", "Pending"])
-    else:
-        pay_status = "Completed"
-
-    pay_date = (order_date_dt + timedelta(minutes=random.randint(1, 10))).strftime("%Y-%m-%d %H:%M:%S")
-    tx_ref = "" if pay_status in ["Failed", "Pending"] else f"TXN-{oid}-{payment_counter}"
-
-    payments.append({
-        "PaymentID": payment_counter,
-        "OrderID": oid,
-        "PaymentDate": pay_date,
-        "PaymentMethod": pay_method,
-        "PaymentAmount": round(order_total, 2),
-        "PaymentStatus": pay_status,
-        "TransactionReference": tx_ref
-    })
-    payment_counter += 1
+            return_id_counter += 1
+            
+        od_id_counter += 1
+        
+    payments[oid - 1]["PaymentAmount"] = round(order_total, 2)
 
 # =============================================================================
-# 7. COMPREHENSIVE VALIDATION ENGINE
+# 7. AUTOMATED PRE-EXPORT VALIDATION ENGINE
 # =============================================================================
+print("[Running Comprehensive Validation Engine]...")
 
-print("\nRunning Exhaustive Data & DDL Constraint Validation Checks...")
-
-def validate_all():
+def run_validation():
     errors = []
-    
-    # 1. Primary Key Uniqueness
-    for name, dataset, pk in [
-        ("Categories", categories, "CategoryID"), ("Suppliers", suppliers, "SupplierID"),
-        ("Employees", employees, "EmployeeID"), ("Customers", customers, "CustomerID"),
-        ("Products", products, "ProductID"), ("Orders", orders, "OrderID"),
-        ("OrderDetails", order_details, "OrderDetailID"), ("Payments", payments, "PaymentID"),
-        ("Shipments", shipments, "ShipmentID"), ("Returns", returns, "ReturnID")
-    ]:
-        pks = [r[pk] for r in dataset]
-        if len(pks) != len(set(pks)):
-            errors.append(f"PK Error: Duplicate Primary Key in {name}")
 
-    # 2. UNIQUE Constraints
-    cust_emails = [c["Email"] for c in customers]
-    if len(cust_emails) != len(set(cust_emails)): errors.append("UQ Error: Duplicate Customer Email")
-    
-    emp_emails = [e["Email"] for e in employees]
-    if len(emp_emails) != len(set(emp_emails)): errors.append("UQ Error: Duplicate Employee Email")
-    
-    sup_emails = [s["ContactEmail"] for s in suppliers]
-    if len(sup_emails) != len(set(sup_emails)): errors.append("UQ Error: Duplicate Supplier Email")
-    
-    tracking_nums = [s["TrackingNumber"] for s in shipments if s["TrackingNumber"] != ""]
-    if len(tracking_nums) != len(set(tracking_nums)): errors.append("UQ Error: Duplicate Tracking Number")
-
-    # 3. Foreign Key Integrity
-    cust_ids = set(c["CustomerID"] for c in customers)
-    emp_ids = set(e["EmployeeID"] for e in employees)
-    prod_ids = set(p["ProductID"] for p in products)
-    order_ids = set(o["OrderID"] for o in orders)
-    od_ids = set(od["OrderDetailID"] for od in order_details)
-    order_detail_quantities = {od["OrderDetailID"]: od["Quantity"] for od in order_details}
-
-    for o in orders:
-        if o["CustomerID"] not in cust_ids: errors.append(f"FK Error: Order {o['OrderID']} invalid CustomerID")
-        if o["EmployeeID"] != "" and int(o["EmployeeID"]) not in emp_ids: errors.append(f"FK Error: Order {o['OrderID']} invalid EmployeeID")
-
-    for p in payments:
-        if p["OrderID"] not in order_ids: errors.append(f"FK Error: Payment {p['PaymentID']} invalid OrderID")
-
-    for s in shipments:
-        if s["OrderID"] not in order_ids: errors.append(f"FK Error: Shipment {s['ShipmentID']} invalid OrderID")
-
-    for r in returns:
-        if r["OrderDetailID"] not in od_ids:
-            errors.append(f"FK Error: Return {r['ReturnID']} invalid OrderDetailID")
-        elif r["ReturnQuantity"] > order_detail_quantities[r["OrderDetailID"]]:
-            errors.append(f"Business Error: Return {r['ReturnID']} exceeds purchased quantity")
-
-    # 4. CHECK Constraints & Data Bounds Validation
-    for c in categories:
-        if c["CategoryStatus"] not in ['Active', 'Inactive']: errors.append("CHECK Error: CategoryStatus invalid")
+    # 1. Foreign Key Checks
+    valid_category_ids = set(c["CategoryID"] for c in categories)
+    valid_supplier_ids = set(s["SupplierID"] for s in suppliers)
+    valid_customer_ids = set(c["CustomerID"] for c in customers)
+    valid_employee_ids = set(e["EmployeeID"] for e in employees)
+    valid_product_ids = set(p["ProductID"] for p in products)
+    valid_order_ids = set(o["OrderID"] for o in orders)
+    valid_order_detail_ids = set(od["OrderDetailID"] for od in order_details)
 
     for p in products:
-        if p["Price"] <= 0: errors.append(f"CHECK Error: Product {p['ProductID']} Price <= 0")
-        if p["Cost"] < 0 or p["Cost"] >= p["Price"]: errors.append(f"CHECK Error: Product {p['ProductID']} invalid Cost/Price")
-        if p["StockQuantity"] < 0: errors.append(f"CHECK Error: Product {p['ProductID']} Stock < 0")
-        if p["ProductStatus"] not in ['Active', 'Out of Stock', 'Discontinued']: errors.append("CHECK Error: ProductStatus invalid")
-
-    for e in employees:
-        if e["EmployeeStatus"] not in ['Active', 'Inactive']: errors.append("CHECK Error: EmployeeStatus invalid")
+        if p["CategoryID"] not in valid_category_ids:
+            errors.append(f"FK Error: Product {p['ProductID']} references invalid CategoryID {p['CategoryID']}")
+        if p["SupplierID"] not in valid_supplier_ids:
+            errors.append(f"FK Error: Product {p['ProductID']} references invalid SupplierID {p['SupplierID']}")
 
     for o in orders:
-        if o["OrderStatus"] not in ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled']: errors.append("CHECK Error: OrderStatus invalid")
+        if o["CustomerID"] not in valid_customer_ids:
+            errors.append(f"FK Error: Order {o['OrderID']} references invalid CustomerID {o['CustomerID']}")
+        if o["EmployeeID"] is not None and o["EmployeeID"] not in valid_employee_ids:
+            errors.append(f"FK Error: Order {o['OrderID']} references invalid EmployeeID {o['EmployeeID']}")
 
     for od in order_details:
-        if od["Quantity"] <= 0: errors.append("CHECK Error: Quantity <= 0")
-        if od["UnitPrice"] <= 0: errors.append("CHECK Error: UnitPrice <= 0")
-        if not (0 <= od["Discount"] <= 100): errors.append("CHECK Error: Discount out of bounds")
+        if od["OrderID"] not in valid_order_ids:
+            errors.append(f"FK Error: OrderDetail {od['OrderDetailID']} references invalid OrderID {od['OrderID']}")
+        if od["ProductID"] not in valid_product_ids:
+            errors.append(f"FK Error: OrderDetail {od['OrderDetailID']} references invalid ProductID {od['ProductID']}")
+
+    for p in payments:
+        if p["OrderID"] not in valid_order_ids:
+            errors.append(f"FK Error: Payment {p['PaymentID']} references invalid OrderID {p['OrderID']}")
+
+    for s in shipments:
+        if s["OrderID"] not in valid_order_ids:
+            errors.append(f"FK Error: Shipment {s['ShipmentID']} references invalid OrderID {s['OrderID']}")
 
     for r in returns:
-        if r["ReturnQuantity"] <= 0: errors.append("CHECK Error: ReturnQuantity <= 0")
-        if r["ReturnStatus"] not in ['Requested', 'Approved', 'Rejected', 'Completed']: errors.append("CHECK Error: ReturnStatus invalid")
+        if r["OrderDetailID"] not in valid_order_detail_ids:
+            errors.append(f"FK Error: Return {r['ReturnID']} references invalid OrderDetailID {r['OrderDetailID']}")
 
-    for pay in payments:
-        if pay["PaymentAmount"] <= 0: errors.append("CHECK Error: PaymentAmount <= 0")
-        if pay["PaymentMethod"] not in ['Credit Card', 'Debit Card', 'PayPal', 'Bank Transfer', 'Cash on Delivery']: errors.append("CHECK Error: PaymentMethod invalid")
-        if pay["PaymentStatus"] not in ['Pending', 'Completed', 'Failed', 'Refunded']: errors.append("CHECK Error: PaymentStatus invalid")
+    # 2. Vocabulary Checks across all Status fields
+    for c in categories:
+        if c["CategoryStatus"] not in ALLOWED_CATEGORY_STATUS:
+            errors.append(f"Vocab Error: Category {c['CategoryID']} invalid status '{c['CategoryStatus']}'")
 
-    for sh in shipments:
-        if sh["ShipmentStatus"] not in ['Pending', 'Shipped', 'In Transit', 'Delivered', 'Cancelled']: errors.append("CHECK Error: ShipmentStatus invalid")
+    for c in customers:
+        if c["CustomerStatus"] not in ALLOWED_CUSTOMER_STATUS:
+            errors.append(f"Vocab Error: Customer {c['CustomerID']} invalid status '{c['CustomerStatus']}'")
 
-    # Output Summary Counts
-    print(f"  Categories Rows:   {len(categories)}")
-    print(f"  Suppliers Rows:    {len(suppliers)}")
-    print(f"  Employees Rows:    {len(employees)}")
-    print(f"  Customers Rows:    {len(customers)}")
-    print(f"  Products Rows:     {len(products)}")
-    print(f"  Orders Rows:       {len(orders)}")
-    print(f"  OrderDetails Rows: {len(order_details)}")
-    print(f"  Payments Rows:     {len(payments)}")
-    print(f"  Shipments Rows:    {len(shipments)}")
-    print(f"  Returns Rows:      {len(returns)}")
+    for e in employees:
+        if e["EmployeeStatus"] not in ALLOWED_EMPLOYEE_STATUS:
+            errors.append(f"Vocab Error: Employee {e['EmployeeID']} invalid status '{e['EmployeeStatus']}'")
+
+    for p in products:
+        if p["ProductStatus"] not in ALLOWED_PRODUCT_STATUS:
+            errors.append(f"Vocab Error: Product {p['ProductID']} invalid status '{p['ProductStatus']}'")
+
+    for o in orders:
+        if o["OrderStatus"] not in ALLOWED_ORDER_STATUS:
+            errors.append(f"Vocab Error: Order {o['OrderID']} invalid status '{o['OrderStatus']}'")
+            
+    for p in payments:
+        if p["PaymentStatus"] not in ALLOWED_PAYMENT_STATUS:
+            errors.append(f"Vocab Error: Payment {p['PaymentID']} invalid status '{p['PaymentStatus']}'")
+        if p["PaymentMethod"] not in ALLOWED_PAYMENT_METHODS:
+            errors.append(f"Vocab Error: Payment {p['PaymentID']} invalid method '{p['PaymentMethod']}'")
+
+    for s in shipments:
+        if s["ShipmentStatus"] not in ALLOWED_SHIPMENT_STATUS:
+            errors.append(f"Vocab Error: Shipment {s['ShipmentID']} invalid status '{s['ShipmentStatus']}'")
+        if s["ShippingMethod"] not in ALLOWED_SHIPPING_METHODS:
+            errors.append(f"Vocab Error: Shipment {s['ShipmentID']} invalid method '{s['ShippingMethod']}'")
+
+    for r in returns:
+        if r["ReturnStatus"] not in ALLOWED_RETURN_STATUS:
+            errors.append(f"Vocab Error: Return {r['ReturnID']} invalid status '{r['ReturnStatus']}'")
+
+    # 3. Numeric Business Rules Validation
+    for p in products:
+        if p["Price"] <= 0:
+            errors.append(f"Numeric Error: Product {p['ProductID']} Price <= 0")
+        if p["Cost"] <= 0:
+            errors.append(f"Numeric Error: Product {p['ProductID']} Cost <= 0")
+        if p["Cost"] > p["Price"]:
+            errors.append(f"Numeric Error: Product {p['ProductID']} Cost > Price")
+        if p["StockQuantity"] < 0:
+            errors.append(f"Numeric Error: Product {p['ProductID']} StockQuantity < 0")
+
+    for od in order_details:
+        if od["Quantity"] <= 0:
+            errors.append(f"Numeric Error: OrderDetail {od['OrderDetailID']} Quantity <= 0")
+        if not (0.0 <= od["Discount"] <= 100.0):
+            errors.append(f"Numeric Error: OrderDetail {od['OrderDetailID']} Discount out of range [0, 100]")
+
+    for r in returns:
+        if r["ReturnQuantity"] <= 0:
+            errors.append(f"Numeric Error: Return {r['ReturnID']} ReturnQuantity <= 0")
+
+    # 4. Uniqueness Checks
+    cust_emails = [c["Email"] for c in customers]
+    if len(cust_emails) != len(set(cust_emails)):
+        errors.append("Uniqueness Error: Duplicate emails found in Customers!")
+
+    emp_emails = [e["Email"] for e in employees]
+    if len(emp_emails) != len(set(emp_emails)):
+        errors.append("Uniqueness Error: Duplicate emails found in Employees!")
+
+    sup_emails = [s["ContactEmail"] for s in suppliers]
+    if len(sup_emails) != len(set(sup_emails)):
+        errors.append("Uniqueness Error: Duplicate contact emails found in Suppliers!")
+
+    trackings = [s["TrackingNumber"] for s in shipments if s["TrackingNumber"] is not None]
+    if len(trackings) != len(set(trackings)):
+        errors.append("Uniqueness Error: Duplicate TrackingNumbers found in Shipments!")
+
+    # 5. Entity Population & Behavior Checks
+    if len(customers) != NUM_CUSTOMERS:
+        errors.append(f"Customer count expected {NUM_CUSTOMERS}, got {len(customers)}")
+    ordering_custs = set(o["CustomerID"] for o in orders)
+    if len(ordering_custs) != NUM_BUYING_CUSTOMERS:
+        errors.append(f"Buying customers count expected exactly {NUM_BUYING_CUSTOMERS}, got {len(ordering_custs)}")
+
+    if len(products) != NUM_PRODUCTS:
+        errors.append(f"Product count expected {NUM_PRODUCTS}, got {len(products)}")
+    sold_prods = set(od["ProductID"] for od in order_details)
+    if len(sold_prods) != NUM_SOLD_PRODUCTS:
+        errors.append(f"Sold products count expected exactly {NUM_SOLD_PRODUCTS}, got {len(sold_prods)}")
+
+    # 6. Payment Amount & Calculation Reconciliation
+    calculated_order_totals = {}
+    for od in order_details:
+        oid = od["OrderID"]
+        line_total = (od["UnitPrice"] * (1.0 - od["Discount"] / 100.0)) * od["Quantity"]
+        calculated_order_totals[oid] = calculated_order_totals.get(oid, 0.0) + line_total
+
+    for p in payments:
+        calc_tot = round(calculated_order_totals[p["OrderID"]], 2)
+        if round(p["PaymentAmount"], 2) != calc_tot:
+            errors.append(f"Calculation Error: Payment {p['PaymentID']} amount ({p['PaymentAmount']}) != Order total ({calc_tot})")
+
+    # 7. Date Sequences & Chronology Validation
+    cust_map = {c["CustomerID"]: datetime.fromisoformat(c["RegistrationDate"]) for c in customers}
+    order_map = {o["OrderID"]: datetime.fromisoformat(o["OrderDate"]) for o in orders}
+
+    for o in orders:
+        c_reg = cust_map[o["CustomerID"]]
+        o_date = datetime.fromisoformat(o["OrderDate"])
+        if o_date < c_reg:
+            errors.append(f"Date Error: Order {o['OrderID']} date ({o_date}) precedes Registration ({c_reg})")
+
+    # Shipment Timeline Verification
+    for s in shipments:
+        oid = s["OrderID"]
+        order_dt = order_map[oid]
+
+        if s["ShipmentDate"]:
+            ship_dt = datetime.fromisoformat(s["ShipmentDate"])
+            if ship_dt < order_dt:
+                errors.append(f"Date Error: Shipment {s['ShipmentID']} date ({ship_dt}) precedes Order date ({order_dt})")
+
+            if s["EstimatedDeliveryDate"]:
+                est_dt = datetime.fromisoformat(f"{s['EstimatedDeliveryDate']}T23:59:59")
+                if est_dt < ship_dt:
+                    errors.append(f"Date Error: Shipment {s['ShipmentID']} estimated delivery ({est_dt}) precedes Shipment date ({ship_dt})")
+
+                if s["ActualDeliveryDate"]:
+                    act_dt = datetime.fromisoformat(f"{s['ActualDeliveryDate']}T23:59:59")
+                    if act_dt < ship_dt:
+                        errors.append(f"Date Error: Shipment {s['ShipmentID']} actual delivery ({act_dt}) precedes Shipment date ({ship_dt})")
+
+    # Return Timeline Verification
+    od_map = {od["OrderDetailID"]: od for od in order_details}
+    for r in returns:
+        od = od_map[r["OrderDetailID"]]
+        if r["ReturnQuantity"] > od["Quantity"]:
+            errors.append(f"Return Error: Return {r['ReturnID']} quantity exceeds line item quantity")
+        
+        ship = shipment_objects[od["OrderID"]]
+        if ship["ActualDeliveryDate"]:
+            del_dt = datetime.fromisoformat(f"{ship['ActualDeliveryDate']}T00:00:00")
+            ret_dt = datetime.fromisoformat(r["ReturnDate"])
+            if ret_dt < del_dt:
+                errors.append(f"Date Error: Return {r['ReturnID']} date ({ret_dt}) precedes Delivery Date ({del_dt})")
+
+    # 8. Active Employee Constraint Check
+    inactive_emp_ids = set(e["EmployeeID"] for e in employees if e["EmployeeStatus"] == "Inactive")
+    for o in orders:
+        if o["EmployeeID"] in inactive_emp_ids:
+            errors.append(f"Constraint Error: Order {o['OrderID']} assigned to Inactive Employee {o['EmployeeID']}")
+
+    # 9. Order Details Product Uniqueness Check
+    od_pairs = set()
+    for od in order_details:
+        pair = (od["OrderID"], od["ProductID"])
+        if pair in od_pairs:
+            errors.append(f"Constraint Error: Duplicate Product {od['ProductID']} in Order {od['OrderID']}")
+        od_pairs.add(pair)
+
+    # 10. Shipment NULL Constraints Check
+    for s in shipments:
+        if s["ShipmentStatus"] == "Delivered" and not s["ActualDeliveryDate"]:
+            errors.append(f"Constraint Error: Shipment {s['ShipmentID']} status Delivered but ActualDeliveryDate is NULL")
+        if s["ShipmentStatus"] in ["Pending", "Cancelled"] and s["ShipmentDate"]:
+            errors.append(f"Constraint Error: Shipment {s['ShipmentID']} status {s['ShipmentStatus']} has non-null ShipmentDate")
 
     if errors:
-        print("\nValidation Failed:")
-        for err in set(errors): print(f"  - {err}")
-        return False
-    else:
-        print("\nALL DDL CONSTRAINTS & BUSINESS VALIDATION CHECKS PASSED PERFECTLY!")
-        return True
+        print("\n❌ VALIDATION ENGINE FAILED WITH THE FOLLOWING ERRORS:")
+        for err in errors[:15]:
+            print(f"  - {err}")
+        print("\nAborting CSV export.")
+        sys.exit(1)
+    
+    print("✓ PASS: All foreign keys, vocabularies, numeric rules, date timelines, and behavioral constraints verified successfully!\n")
 
-if not validate_all():
-    exit(1)
+run_validation()
 
 # =============================================================================
 # 8. CSV EXPORT
 # =============================================================================
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-dataset_mapping = {
-    "categories.csv": categories,
-    "suppliers.csv": suppliers,
-    "employees.csv": employees,
-    "customers.csv": customers,
-    "products.csv": products,
-    "orders.csv": orders,
-    "order_details.csv": order_details,
-    "payments.csv": payments,
-    "shipments.csv": shipments,
-    "returns.csv": returns,
-}
-
-print(f"\nWriting clean CSV files to '/{OUTPUT_DIR}'...")
-for filename, rows in dataset_mapping.items():
-    filepath = os.path.join(OUTPUT_DIR, filename)
-    headers = list(rows[0].keys())
-    with open(filepath, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=headers)
+def export_csv(filename, data, fieldnames):
+    filepath = os.path.join("data", filename)
+    with open(filepath, mode="w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(data)
+    print(f"Exported {len(data):>6} rows -> {filepath}")
 
-print("MarketFlow data generation complete.")
+export_csv("categories.csv", categories, ["CategoryID", "CategoryName", "Description", "CategoryStatus"])
+export_csv("suppliers.csv", suppliers, ["SupplierID", "SupplierName", "ContactEmail", "Country"])
+export_csv("customers.csv", customers, ["CustomerID", "FirstName", "LastName", "Email", "Phone", "DateOfBirth", "Gender", "City", "Country", "RegistrationDate", "CustomerStatus"])
+export_csv("employees.csv", employees, ["EmployeeID", "FirstName", "LastName", "Email", "Phone", "Department", "HireDate", "EmployeeStatus"])
+export_csv("products.csv", products, ["ProductID", "ProductName", "CategoryID", "SupplierID", "Price", "Cost", "StockQuantity", "ProductStatus"])
+export_csv("orders.csv", orders, ["OrderID", "CustomerID", "EmployeeID", "OrderDate", "OrderStatus", "ShippingAddress", "ShippingCity", "ShippingCountry"])
+export_csv("order_details.csv", order_details, ["OrderDetailID", "OrderID", "ProductID", "Quantity", "UnitPrice", "Discount"])
+export_csv("payments.csv", payments, ["PaymentID", "OrderID", "PaymentDate", "PaymentMethod", "PaymentAmount", "PaymentStatus", "TransactionReference"])
+export_csv("shipments.csv", shipments, ["ShipmentID", "OrderID", "ShipmentDate", "EstimatedDeliveryDate", "ActualDeliveryDate", "ShippingMethod", "TrackingNumber", "ShipmentStatus"])
+export_csv("returns.csv", returns, ["ReturnID", "OrderDetailID", "ReturnDate", "ReturnQuantity", "ReturnReason", "ReturnStatus"])
+
+# =============================================================================
+# 9. FINAL EXECUTION REPORT
+# =============================================================================
+print("\n==================================================================")
+print("  MARKETFLOW GENERATION COMPLETE REPORT")
+print("==================================================================")
+print(f"• Total Customers Generated:    {len(customers)} (Exactly 300 never placed an order)")
+print(f"• Total Products Generated:     {len(products)} (Exactly 50 never sold)")
+print(f"• Total Active Employees:       {len(active_employee_ids)} of {NUM_EMPLOYEES}")
+print(f"• Total Orders Generated:       {len(orders)}")
+print(f"• Total Order Detail Lines:     {len(order_details)}")
+print(f"• Total Returns Tracked:        {len(returns)}")
+print("==================================================================\n")

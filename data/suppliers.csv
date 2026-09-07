@@ -1,26 +1,21 @@
 SupplierID,SupplierName,ContactEmail,Country
-1,Rodriguez Figueroa and Sanchez_1,contact@rodriguezfiguer.com,Japan
-2,Doyle Ltd_2,contact@doyleltd_2.com,United States
-3,Mcclain Miller and Henderson_3,contact@mcclainmilleran.com,United States
-4,Davis and Sons_4,contact@davisandsons_4.com,Japan
-5,Guzman Hoffman and Baldwin_5,contact@guzmanhoffmanan.com,China
-6,Gardner Robinson and Lawrence_6,contact@gardnerrobinson.com,Taiwan
-7,Blake and Sons_7,contact@blakeandsons_7.com,Taiwan
-8,Henderson Ramirez and Lewis_8,contact@hendersonramire.com,Taiwan
-9,Garcia-James_9,contact@garcia-james_9.com,Japan
-10,Abbott-Munoz_10,contact@abbott-munoz_10.com,United States
-11,Blair PLC_11,contact@blairplc_11.com,Japan
-12,Dudley Group_12,contact@dudleygroup_12.com,Japan
-13,Arnold Ltd_13,contact@arnoldltd_13.com,Germany
-14,Mcclure Ward and Lee_14,contact@mcclurewardandl.com,United States
-15,Williams and Sons_15,contact@williamsandsons.com,Germany
-16,Galloway-Wyatt_16,contact@galloway-wyatt_.com,South Korea
-17,James Group_17,contact@jamesgroup_17.com,United States
-18,Flowers Martin and Kelly_18,contact@flowersmartinan.com,United States
-19,Adams Zuniga and Wong_19,contact@adamszunigaandw.com,United States
-20,Reid Ferguson and Sanchez_20,contact@reidfergusonand.com,Taiwan
-21,Gray-Mayo_21,contact@gray-mayo_21.com,Taiwan
-22,Watts Robinson and Nguyen_22,contact@wattsrobinsonan.com,Germany
-23,Perez Inc_23,contact@perezinc_23.com,Germany
-24,Morales-Jones_24,contact@morales-jones_2.com,United States
-25,Walter Edwards and Rios_25,contact@walteredwardsan.com,Germany
+1,"Peterson, Carter and Moore",contact_1@maldonado.com,Japan
+2,"Gill, Romero and Rodriguez",contact_2@mckay.com,UK
+3,Farmer-Ryan,contact_3@evans.com,Germany
+4,Koch-Decker,contact_4@sellers.com,USA
+5,Miller Group,contact_5@allen-allen.org,Albania
+6,Keller PLC,contact_6@spence.com,USA
+7,Hickman Ltd,contact_7@baker.biz,albania
+8,Lam-Hayes,contact_8@harris.com,Germany
+9,"Spencer, Chapman and Smith",contact_9@walker.com,Albania
+10,Palmer LLC,contact_10@welch.com,Germany
+11,"Kennedy, Mueller and Aguirre",contact_11@washington.org,japan
+12,Henderson-Owens,contact_12@davis.biz,Germany
+13,Chandler-Mcbride,contact_13@brown.com,Japan
+14,Taylor-White,contact_14@wright.net,Albania
+15,"Garcia, Pearson and Fernandez",contact_15@wright-leblanc.info,GERMANY
+16,Tucker-Lewis,contact_16@novak.com,Albania
+17,Baker-Bowers,contact_17@barrera-martin.com,USA
+18,"Higgins, Moore and Phillips",contact_18@mitchell-horton.net,UK
+19,"Edwards, Williams and Woods",contact_19@riley.com,Albania 
+20,Larson Ltd,contact_20@moore.com,USA

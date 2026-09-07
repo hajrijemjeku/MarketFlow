@@ -1,281 +1,401 @@
 ProductID,ProductName,CategoryID,SupplierID,Price,Cost,StockQuantity,ProductStatus
-1,Gray Responsibility 1,9,21,643.08,521.31,50,Active
-2,Seagreen Type 2,15,16,394.13,247.31,163,Active
-3,Skyblue Perhaps 3,14,8,557.91,423.24,0,Discontinued
-4,Yellowgreen City 4,2,2,583.61,415.6,247,Active
-5,Limegreen Answer 5,11,24,597.45,459.1,51,Active
-6,Deeppink Big 6,13,17,34.19,22.85,412,Active
-7,Darkorange Late 7,3,13,62.52,45.75,170,Active
-8,Wheat Choice 8,10,24,542.39,369.45,145,Active
-9,Khaki Best 9,6,6,217.62,176.74,142,Active
-10,Indianred Million 10,14,22,132.89,94.0,0,Discontinued
-11,Tomato Be 11,2,1,202.6,145.67,454,Active
-12,Steelblue Boy 12,11,24,677.11,485.49,325,Active
-13,Aquamarine And 13,6,23,800.5,542.3,164,Active
-14,Olivedrab City 14,2,5,149.0,116.74,366,Active
-15,Magenta Commercial 15,4,1,255.83,175.29,233,Active
-16,Paleturquoise Guy 16,14,21,973.78,687.97,0,Out of Stock
-17,Sandybrown Natural 17,13,15,173.9,127.05,0,Out of Stock
-18,Powderblue Talk 18,15,5,818.1,593.64,20,Active
-19,Indianred Respond 19,14,15,604.84,472.33,436,Active
-20,Mediumseagreen High 20,7,2,339.73,273.74,231,Active
-21,Tan Material 21,7,16,851.91,592.29,158,Active
-22,Royalblue Fear 22,1,16,457.79,325.75,488,Active
-23,Mediumturquoise Trial 23,11,16,236.54,193.21,0,Discontinued
-24,Darksalmon Key 24,10,11,584.38,447.07,465,Active
-25,Hotpink Speak 25,8,4,631.62,400.88,367,Active
-26,Lime Morning 26,7,1,204.87,137.45,234,Active
-27,Turquoise No 27,4,17,287.02,183.56,318,Active
-28,Darkturquoise Deal 28,14,23,662.55,529.0,374,Active
-29,Snow Than 29,7,14,981.65,668.13,417,Active
-30,Deeppink Forward 30,8,6,658.15,501.26,351,Active
-31,Magenta Find 31,8,5,185.47,146.9,416,Active
-32,Ghostwhite Career 32,7,16,320.79,249.88,0,Discontinued
-33,Mediumblue Degree 33,1,12,947.92,705.92,0,Out of Stock
-34,Mediumorchid But 34,14,17,43.21,35.26,326,Active
-35,Cornflowerblue Way 35,4,4,633.08,453.97,411,Active
-36,Seagreen New 36,6,25,72.7,46.87,87,Active
-37,Ghostwhite On 37,14,23,1009.52,700.22,0,Out of Stock
-38,Bisque Glass 38,1,15,1016.34,641.2,64,Active
-39,Brown Enjoy 39,13,20,758.76,491.63,0,Out of Stock
-40,Lightcoral Great 40,9,2,520.37,410.77,0,Out of Stock
-41,Moccasin Drug 41,4,12,176.54,134.06,269,Active
-42,Violet Culture 42,8,24,880.29,697.69,429,Active
-43,Teal Marriage 43,3,4,935.97,680.39,403,Active
-44,Dimgray Account 44,1,8,930.25,669.5,97,Active
-45,Lightgray Let 45,2,9,456.92,304.22,350,Active
-46,Orchid Material 46,4,5,854.22,605.03,80,Active
-47,Powderblue Hundred 47,13,14,459.02,336.59,446,Active
-48,Oldlace Section 48,9,22,358.48,295.8,0,Out of Stock
-49,Brown No 49,1,23,1020.52,646.94,0,Out of Stock
-50,Darksalmon Now 50,6,13,994.53,785.74,0,Discontinued
-51,Yellowgreen Mission 51,13,2,774.23,531.54,39,Active
-52,Lime Full 52,11,23,994.18,641.27,224,Active
-53,Steelblue Likely 53,7,22,873.28,563.62,170,Active
-54,Cyan Several 54,15,12,21.31,16.24,481,Active
-55,Darkseagreen Around 55,3,23,479.69,329.11,329,Active
-56,Seashell Form 56,13,20,776.63,525.11,410,Active
-57,Honeydew Away 57,11,13,966.47,622.57,0,Out of Stock
-58,Indianred Sense 58,9,11,473.18,318.09,276,Active
-59,Orange One 59,9,10,251.22,178.85,184,Active
-60,Mistyrose Pm 60,13,21,165.23,136.42,313,Active
-61,Gold Board 61,5,8,882.1,667.46,268,Active
-62,Navy Standard 62,2,24,77.39,57.36,191,Active
-63,Darkslateblue Individual 63,2,2,958.03,607.68,303,Active
-64,Darksalmon Beyond 64,12,1,586.27,367.99,307,Active
-65,Blanchedalmond Medical 65,10,23,1039.76,716.53,314,Active
-66,Lightyellow Seek 66,4,12,361.37,246.37,303,Active
-67,Darkblue Even 67,11,5,808.59,574.34,177,Active
-68,Lightgray Discussion 68,9,19,245.03,162.12,85,Active
-69,Aliceblue Prove 69,12,14,819.14,664.47,0,Discontinued
-70,Darkred Administration 70,15,5,532.42,386.24,279,Active
-71,Orange Beat 71,7,19,682.59,451.59,309,Active
-72,Lightseagreen Win 72,8,21,474.04,344.5,260,Active
-73,Lightslategray Heart 73,12,14,831.13,660.81,0,Out of Stock
-74,Darkturquoise Perhaps 74,12,15,166.27,112.21,70,Active
-75,Olive Word 75,12,7,448.57,369.79,0,Out of Stock
-76,Linen He 76,9,12,920.83,738.14,66,Active
-77,Sandybrown Forget 77,2,12,561.47,461.69,0,Out of Stock
-78,Lightpink Word 78,6,10,1047.68,792.91,415,Active
-79,Greenyellow Different 79,3,5,861.19,629.2,166,Active
-80,Cornflowerblue Physical 80,15,10,275.45,180.31,72,Active
-81,Silver Bill 81,9,12,77.19,63.38,168,Active
-82,Darkred Result 82,10,15,1090.89,721.23,378,Active
-83,Mistyrose Dream 83,14,20,144.27,114.92,399,Active
-84,Khaki Tell 84,8,22,564.13,364.77,419,Active
-85,Lemonchiffon Very 85,10,22,681.02,502.64,183,Active
-86,Lightsalmon Stock 86,9,2,1193.28,766.88,340,Active
-87,Royalblue Community 87,2,6,812.54,568.69,372,Active
-88,Plum Thousand 88,5,18,757.47,519.68,0,Out of Stock
-89,Seagreen Air 89,10,18,568.71,465.72,106,Active
-90,Darkgoldenrod Ago 90,13,16,491.54,407.08,282,Active
-91,Brown Skin 91,3,1,291.37,227.22,439,Active
-92,Greenyellow Strong 92,15,19,549.63,360.94,215,Active
-93,Limegreen Draw 93,10,2,626.68,398.26,102,Active
-94,Lightyellow Fish 94,7,1,914.43,689.12,68,Active
-95,Springgreen His 95,2,18,179.64,142.84,55,Active
-96,Yellow School 96,3,10,1121.55,762.21,0,Discontinued
-97,Mintcream Teach 97,6,6,38.5,31.47,173,Active
-98,Palevioletred Produce 98,3,14,932.39,715.48,470,Active
-99,Cornflowerblue Similar 99,2,2,255.18,170.02,262,Active
-100,Wheat Need 100,9,25,645.31,408.49,172,Active
-101,Tan Best 101,8,18,462.13,331.59,129,Active
-102,Sienna Music 102,15,1,352.97,222.64,136,Active
-103,Palegreen Argue 103,13,18,656.03,524.73,238,Active
-104,Darkseagreen Business 104,2,21,613.34,405.34,0,Out of Stock
-105,Moccasin Page 105,9,6,888.35,627.8,476,Active
-106,Deepskyblue Money 106,9,15,65.61,43.02,327,Active
-107,Lightcyan Director 107,5,21,933.7,777.94,256,Active
-108,Saddlebrown Leave 108,5,20,306.47,208.2,441,Active
-109,Indigo Myself 109,11,7,663.14,472.28,0,Discontinued
-110,Darksalmon Military 110,12,18,600.49,454.83,72,Active
-111,Lightslategray Past 111,14,5,932.22,582.81,117,Active
-112,Brown Wide 112,10,17,1017.21,766.36,185,Active
-113,Honeydew Difficult 113,11,9,1162.63,783.92,349,Active
-114,Darkorchid College 114,6,11,279.33,176.39,477,Active
-115,Firebrick Cultural 115,12,5,625.25,520.69,471,Active
-116,Khaki Truth 116,1,22,209.21,147.09,260,Active
-117,Mediumblue Everything 117,13,13,659.17,435.12,49,Active
-118,Blueviolet Woman 118,9,1,1091.59,715.13,73,Active
-119,Purple Address 119,6,13,891.47,663.7,403,Active
-120,Lightsteelblue Little 120,13,23,983.93,787.2,108,Active
-121,Greenyellow Rich 121,8,1,223.46,185.0,481,Active
-122,Darkorchid Forget 122,12,12,246.21,161.29,423,Active
-123,Violet Discover 123,12,8,272.6,195.06,153,Active
-124,Orchid One 124,8,23,729.75,568.5,430,Active
-125,Sandybrown Force 125,11,13,128.01,97.65,97,Active
-126,Salmon Market 126,9,7,757.74,531.27,299,Active
-127,Springgreen Especially 127,3,3,711.21,474.65,0,Out of Stock
-128,Antiquewhite Machine 128,15,19,1064.68,685.83,150,Active
-129,Azure Do 129,4,22,44.87,28.26,324,Active
-130,Palegreen Image 130,5,22,625.15,452.49,338,Active
-131,Palevioletred Trade 131,11,21,80.3,50.97,218,Active
-132,Midnightblue Interest 132,5,4,758.96,547.34,398,Active
-133,Aquamarine About 133,1,24,245.7,187.39,239,Active
-134,Royalblue Huge 134,6,1,426.27,319.57,423,Active
-135,Darkslategray Color 135,1,24,277.82,188.25,479,Active
-136,Deepskyblue Camera 136,4,7,185.33,139.94,59,Active
-137,Gainsboro Store 137,1,16,424.86,351.24,488,Active
-138,Whitesmoke Care 138,6,9,285.18,205.25,436,Active
-139,Darkorchid Partner 139,1,11,544.47,420.54,0,Discontinued
-140,Hotpink Town 140,10,20,441.37,356.44,73,Active
-141,Steelblue Just 141,2,2,991.87,734.2,365,Active
-142,Whitesmoke Community 142,2,5,89.71,58.98,0,Discontinued
-143,Skyblue One 143,10,21,435.68,351.15,0,Discontinued
-144,Lightgoldenrodyellow Sound 144,1,10,927.22,681.44,220,Active
-145,Purple Cell 145,4,20,916.31,632.11,247,Active
-146,Pink Every 146,13,14,1020.84,705.15,490,Active
-147,Indianred Place 147,11,1,490.87,368.72,62,Active
-148,Greenyellow Decade 148,1,20,824.22,573.51,473,Active
-149,Aqua What 149,10,5,668.87,513.52,381,Active
-150,Lime Seven 150,10,15,196.9,156.88,0,Discontinued
-151,Mistyrose Quickly 151,3,10,662.95,471.77,193,Active
-152,Plum Over 152,5,19,1071.23,709.33,0,Out of Stock
-153,Firebrick Recognize 153,5,20,378.51,280.89,0,Discontinued
-154,Blue We 154,10,22,667.55,545.86,437,Active
-155,Palegoldenrod Institution 155,9,2,438.96,343.43,475,Active
-156,Orchid Alone 156,4,3,410.55,279.83,249,Active
-157,Lightpink Of 157,10,23,388.76,271.6,325,Active
-158,Midnightblue Each 158,5,14,334.84,269.61,476,Active
-159,Darkgray Court 159,1,16,220.27,183.33,127,Active
-160,Green Entire 160,8,20,248.36,178.38,427,Active
-161,Lightgray Describe 161,6,24,417.52,306.97,13,Active
-162,Mediumspringgreen Near 162,6,1,82.72,68.25,0,Out of Stock
-163,Lightsalmon Particular 163,5,15,234.62,163.58,32,Active
-164,Darkgoldenrod Budget 164,1,7,211.12,166.28,378,Active
-165,Turquoise Really 165,3,11,882.32,679.55,100,Active
-166,Magenta Trade 166,14,9,881.42,729.41,204,Active
-167,Plum Have 167,11,4,356.11,277.32,199,Active
-168,Darkgreen Class 168,13,12,838.87,532.12,329,Active
-169,Lightgoldenrodyellow Course 169,15,14,863.12,703.93,0,Out of Stock
-170,Darkorchid Air 170,15,5,814.48,637.97,201,Active
-171,Orange So 171,6,20,508.1,349.34,400,Active
-172,Lavenderblush Manage 172,10,19,225.41,159.39,177,Active
-173,Darkcyan Matter 173,4,2,665.55,507.27,0,Out of Stock
-174,Azure Food 174,9,19,911.18,709.81,0,Out of Stock
-175,Ivory Strategy 175,8,22,628.11,495.76,461,Active
-176,Oldlace Entire 176,11,25,576.9,412.24,174,Active
-177,Wheat Beyond 177,12,12,592.34,425.13,252,Active
-178,Darkblue Risk 178,5,19,512.5,326.75,28,Active
-179,Palevioletred Short 179,4,8,990.0,716.96,121,Active
-180,Mediumslateblue Particularly 180,5,14,1017.24,712.08,201,Active
-181,Mediumvioletred Wish 181,5,18,115.49,76.96,275,Active
-182,Mistyrose Sing 182,6,8,653.31,471.33,228,Active
-183,Navy Page 183,8,15,473.71,351.68,149,Active
-184,Lightgoldenrodyellow Compare 184,7,1,196.43,151.86,193,Active
-185,Cornsilk Prevent 185,15,3,339.91,242.67,50,Active
-186,Lightblue Money 186,13,9,919.63,742.02,0,Discontinued
-187,Gray Will 187,1,18,215.12,168.24,164,Active
-188,Darkkhaki Detail 188,12,25,720.38,550.0,80,Active
-189,Paleturquoise Daughter 189,14,25,816.04,575.79,404,Active
-190,Orangered Great 190,5,10,998.17,659.62,217,Active
-191,Springgreen Cost 191,14,19,733.3,608.67,399,Active
-192,Slategray Instead 192,3,13,282.66,189.79,129,Active
-193,Sandybrown Late 193,9,19,948.3,630.92,246,Active
-194,Turquoise Mind 194,6,3,328.13,257.33,367,Active
-195,Sienna Method 195,7,7,549.52,356.56,0,Discontinued
-196,Moccasin Out 196,3,19,925.9,700.26,265,Active
-197,Honeydew Herself 197,13,22,893.87,669.1,361,Active
-198,Peru Away 198,13,13,904.38,612.64,310,Active
-199,Honeydew These 199,1,19,989.05,630.43,0,Out of Stock
-200,Magenta Behind 200,6,19,731.51,507.57,453,Active
-201,Slateblue Even 201,7,13,232.35,171.32,106,Active
-202,Cornsilk Pattern 202,8,4,427.54,269.78,165,Active
-203,Mediumturquoise Discussion 203,2,6,131.33,92.41,0,Discontinued
-204,Bisque Officer 204,12,20,504.77,396.0,0,Discontinued
-205,Yellowgreen Successful 205,7,10,227.28,172.65,242,Active
-206,Lime Country 206,1,12,532.41,419.64,220,Active
-207,Plum Stop 207,7,6,991.04,791.78,390,Active
-208,Slategray Top 208,2,13,1182.18,764.53,0,Out of Stock
-209,Darkseagreen Dark 209,4,10,521.49,351.44,319,Active
-210,Green Political 210,10,10,664.24,474.12,151,Active
-211,Aquamarine Respond 211,4,1,1092.93,792.96,319,Active
-212,Slategray Time 212,13,8,665.42,425.43,245,Active
-213,Palegreen Building 213,8,19,50.55,40.88,480,Active
-214,Moccasin Tree 214,8,12,836.23,563.25,323,Active
-215,Black Alone 215,14,6,429.74,337.89,231,Active
-216,Darkgray Bad 216,8,13,929.01,729.56,211,Active
-217,Cyan Door 217,12,2,308.65,199.36,331,Active
-218,Darkmagenta Good 218,9,10,658.32,536.66,471,Active
-219,Linen Never 219,4,16,503.95,334.91,0,Out of Stock
-220,Aliceblue Foot 220,6,3,850.53,606.76,219,Active
-221,Lightskyblue Cover 221,8,6,294.07,209.69,47,Active
-222,Gray Itself 222,11,23,752.95,543.74,214,Active
-223,Lightcoral Money 223,14,7,389.43,323.37,0,Out of Stock
-224,Dimgray Son 224,15,5,402.49,268.42,44,Active
-225,Crimson Every 225,2,18,785.87,529.05,251,Active
-226,Aquamarine Begin 226,14,9,855.84,674.83,0,Discontinued
-227,Aliceblue Treat 227,2,6,342.68,242.37,49,Active
-228,Violet Indeed 228,11,25,24.69,18.86,101,Active
-229,Darkgray Such 229,4,23,54.7,37.21,366,Active
-230,Olivedrab Standard 230,1,21,948.25,651.09,469,Active
-231,Lightcoral That 231,2,13,765.07,555.37,34,Active
-232,Salmon Score 232,13,13,968.09,616.02,132,Active
-233,Azure Forget 233,4,3,27.46,22.67,0,Discontinued
-234,Darkcyan Guess 234,14,7,670.43,547.17,59,Active
-235,Skyblue Door 235,13,22,180.69,142.63,65,Active
-236,Wheat Recently 236,14,11,384.32,264.92,488,Active
-237,Bisque I 237,9,13,938.43,751.75,192,Active
-238,Saddlebrown Position 238,6,6,31.94,21.85,0,Discontinued
-239,Olive Main 239,4,15,269.05,183.88,329,Active
-240,Lavender Impact 240,6,2,81.35,63.19,316,Active
-241,Royalblue Course 241,8,4,868.81,572.9,301,Active
-242,Blue Pattern 242,3,9,1105.36,767.64,366,Active
-243,Orangered By 243,7,22,1116.94,740.4,0,Out of Stock
-244,Brown Suddenly 244,3,21,902.38,611.76,351,Active
-245,Gainsboro Sort 245,8,3,396.55,274.73,205,Active
-246,Goldenrod Low 246,9,21,835.26,596.03,16,Active
-247,Gainsboro Lay 247,4,1,774.56,496.92,387,Active
-248,Linen Door 248,7,25,249.31,202.4,0,Out of Stock
-249,Forestgreen Art 249,8,10,229.0,169.59,131,Active
-250,Moccasin Mr 250,15,24,761.52,482.48,178,Active
-251,Orange Out 251,3,9,395.15,260.86,0,Discontinued
-252,Purple Cold 252,13,14,686.58,521.96,0,Discontinued
-253,Lightgreen Which 253,14,24,352.37,271.7,474,Active
-254,Mistyrose Pressure 254,15,22,1202.51,790.82,123,Active
-255,Seashell Body 255,10,13,537.33,421.96,43,Active
-256,Moccasin High 256,14,16,83.37,65.29,82,Active
-257,Red Prepare 257,4,5,118.54,82.49,487,Active
-258,Gray Close 258,4,8,563.1,410.87,94,Active
-259,Slategray Manage 259,12,7,258.55,203.49,156,Active
-260,Antiquewhite By 260,10,15,991.79,774.5,256,Active
-261,Darkorange Responsibility 261,2,12,411.32,324.61,268,Active
-262,Mediumseagreen Foot 262,10,24,444.87,352.41,256,Active
-263,Darkgray These 263,1,25,479.94,311.32,481,Active
-264,Seagreen Require 264,5,20,617.33,434.39,204,Active
-265,Springgreen Describe 265,8,10,497.29,368.35,46,Active
-266,Gainsboro Show 266,6,5,734.68,574.74,12,Active
-267,Palevioletred Above 267,1,17,792.26,586.99,222,Active
-268,Peru Movie 268,7,24,425.42,304.78,311,Active
-269,Mediumspringgreen Investment 269,2,14,1132.5,709.15,0,Out of Stock
-270,Teal Old 270,15,19,208.12,138.27,404,Active
-271,Whitesmoke Trip 271,15,25,815.03,580.57,362,Active
-272,Peachpuff Somebody 272,6,23,75.28,55.59,136,Active
-273,Coral Already 273,4,16,56.83,37.26,356,Active
-274,Violet Gun 274,1,23,674.76,535.88,493,Active
-275,Sienna Deep 275,11,5,303.86,210.89,440,Active
-276,Mediumturquoise Month 276,3,1,126.44,102.22,206,Active
-277,Oldlace Measure 277,7,23,738.18,473.07,106,Active
-278,Lightyellow Themselves 278,15,14,193.28,141.0,266,Active
-279,Hotpink Same 279,9,22,1019.09,710.45,395,Active
-280,Goldenrod Top 280,15,24,866.67,696.84,418,Active
+1,CineLight Ring LED (v1),11,20,932.49,629.61,394,Active
+2,TechNova Lite 5G (v2),10,17,886.2,641.55,60,Active
+3,ColorInk XL Cartridge (v3),13,9,490.21,300.69,210,Active
+4,MechType RGB Keyboard (v4),9,4,178.89,131.65,0,Out of Stock
+5,SmartHub Central (v5),6,14,837.06,543.88,261,Active
+6,PowerMax 20K Power Bank (v6),14,18,335.15,196.2,464,Active
+7,VoltGuard UPS Battery (v7),14,1,860.34,584.21,199,Active
+8,SmartThermo V2 (v8),6,5,999.0,647.61,414,Active
+9,EcoGlow Smart Bulb (v9),6,3,793.71,522.44,0,Out of Stock
+10,PowerSync Braided Cable (v10),12,1,223.15,140.64,0,Out of Stock
+11,"UltraView 4K 32"" (v11)",2,19,712.22,552.15,449,Active
+12,MacroDeck 12-Key (v12),9,5,343.92,218.62,72,Active
+13,FastStore NVMe SSD (v13),4,14,644.25,403.91,283,Active
+14,LaserJet Pro Printer (v14),13,4,49.05,34.69,163,Active
+15,CloudLink Wi-Fi 6 Router (v15),4,15,482.46,283.32,417,Active
+16,ScanMaster Scanner (v16),13,17,240.93,147.92,0,Discontinued
+17,SpeedPro NAS (v17),4,12,541.8,400.0,326,Active
+18,Titan Desktop PC (v18),1,1,666.34,383.46,440,Active
+19,FitActive GPS Watch (v19),7,3,620.97,444.84,54,Active
+20,CineLight Ring LED (v20),11,11,787.84,575.19,105,Active
+21,SmartHub Central (v21),6,12,105.16,75.38,357,Active
+22,TabPro 10.5 Tablet (v22),10,2,1002.21,587.63,103,Active
+23,ProGrip Controller (v23),8,1,560.36,383.57,203,Active
+24,FitActive GPS Watch (v24),7,1,894.83,640.31,203,Active
+25,EcoPaper 500-Sheet Ream (v25),13,9,84.51,52.74,27,Active
+26,CableClean Tray (v26),15,4,947.85,671.44,181,Active
+27,MacroDeck 12-Key (v27),9,10,738.22,580.62,73,Active
+28,VoltBook Pro 14 (v28),1,7,172.41,99.08,0,Discontinued
+29,PulseRing Sport (v29),7,7,165.09,98.35,144,Active
+30,FlexiPod Tripod (v30),11,9,484.66,320.03,313,Active
+31,SmartHub Central (v31),6,7,622.5,404.86,0,Discontinued
+32,SoundWave Pro Headphones (v32),5,20,535.86,400.92,449,Active
+33,StudioBass Soundbar (v33),5,20,904.92,536.86,189,Active
+34,"ProDisplay HD 24"" (v34)",2,8,642.35,378.66,0,Discontinued
+35,ProGrip Controller (v35),8,9,34.3,19.78,296,Active
+36,GamingView 144Hz (v36),2,4,976.64,588.2,402,Active
+37,VoltGuard UPS Battery (v37),14,2,293.87,217.02,277,Active
+38,CableClean Tray (v38),15,3,219.55,147.85,193,Active
+39,PrecisionClick Mouse (v39),9,8,214.42,154.04,17,Active
+40,PowerMax 20K Power Bank (v40),14,9,208.98,166.62,0,Out of Stock
+41,SmartThermo V2 (v41),6,7,911.57,678.68,0,Discontinued
+42,SoundWave Pro Headphones (v42),5,6,830.77,647.06,451,Active
+43,PowerMax 20K Power Bank (v43),14,8,692.86,429.79,246,Active
+44,Prime Z690 Motherboard (v44),3,1,682.35,531.78,0,Out of Stock
+45,PowerSync Braided Cable (v45),12,19,100.85,74.29,409,Active
+46,FastStore NVMe SSD (v46),4,18,69.12,46.35,60,Active
+47,ClearStream 4K Webcam (v47),11,5,801.63,526.7,310,Active
+48,DisplayPort Adapter (v48),12,18,158.88,109.96,487,Active
+49,TabPro 10.5 Tablet (v49),10,14,190.23,132.42,441,Active
+50,SoundWave Mini Speaker (v50),5,5,285.18,206.28,340,Active
+51,ClearStream 4K Webcam (v51),11,7,386.44,296.36,36,Active
+52,Titan Desktop PC (v52),1,7,397.07,270.89,120,Active
+53,VoltBook Pro 14 (v53),1,16,157.68,108.77,96,Active
+54,VoltBook Pro 14 (v54),1,5,38.42,27.1,210,Active
+55,ProCarry Laptop Bag (v55),15,14,76.8,53.7,288,Active
+56,TechNova X1 Smartphone (v56),10,1,357.96,240.58,40,Active
+57,"UltraView 4K 32"" (v57)",2,16,172.61,99.91,16,Active
+58,Apex Workstation 16 (v58),1,15,560.18,432.66,27,Active
+59,ClearStream 4K Webcam (v59),11,15,151.81,116.37,204,Active
+60,FoldTech Duo (v60),10,2,977.76,619.8,105,Active
+61,"ProDisplay HD 24"" (v61)",2,1,384.59,224.77,390,Active
+62,PulseRing Sport (v62),7,4,109.51,82.12,45,Active
+63,ArcadeFight Stick (v63),8,1,251.84,183.5,0,Out of Stock
+64,FastCharge 65W Plug (v64),14,8,343.0,208.73,104,Active
+65,SmartHub Central (v65),6,5,572.66,455.32,119,Active
+66,DeskFlex Leather Mat (v66),15,19,700.04,529.95,489,Active
+67,FlexiPod Tripod (v67),11,1,360.64,217.04,252,Active
+68,CableClean Tray (v68),15,6,587.46,433.83,338,Active
+69,FlexiPod Tripod (v69),11,12,120.81,70.59,50,Active
+70,FlexiPod Tripod (v70),11,15,638.02,505.54,78,Active
+71,AudioPulse Wireless Earbuds (v71),5,12,586.0,411.12,77,Active
+72,"VisionMax 27"" (v72)",2,4,389.61,227.17,440,Active
+73,GamingView 144Hz (v73),2,6,552.8,380.64,156,Active
+74,DisplayPort Adapter (v74),12,20,278.75,182.43,475,Active
+75,PrecisionClick Mouse (v75),9,14,221.22,153.66,0,Discontinued
+76,ErgoPad Wrist Rest (v76),9,9,406.37,322.05,234,Active
+77,PowerMax 20K Power Bank (v77),14,18,892.23,683.82,0,Discontinued
+78,VoltGuard UPS Battery (v78),14,19,90.47,64.6,0,Out of Stock
+79,MultiHub USB-C Adapter (v79),12,17,481.49,278.16,436,Active
+80,CloudLink Wi-Fi 6 Router (v80),4,11,275.0,198.63,239,Active
+81,Apex Workstation 16 (v81),1,17,132.95,86.5,173,Active
+82,SoundWave Mini Speaker (v82),5,14,181.01,107.88,95,Active
+83,CloudLink Wi-Fi 6 Router (v83),4,16,867.82,607.02,459,Active
+84,FastStore NVMe SSD (v84),4,7,59.64,47.37,137,Active
+85,ScanMaster Scanner (v85),13,10,495.22,320.14,11,Active
+86,MechType RGB Keyboard (v86),9,17,116.97,89.32,21,Active
+87,FoldTech Duo (v87),10,3,647.56,399.56,130,Active
+88,Vortex RTX GPU (v88),3,16,1060.19,654.0,282,Active
+89,ScanMaster Scanner (v89),13,19,809.55,519.31,287,Active
+90,EcoPaper 500-Sheet Ream (v90),13,11,639.46,382.61,0,Out of Stock
+91,CableClean Tray (v91),15,18,466.96,338.62,35,Active
+92,Titan Desktop PC (v92),1,20,660.58,480.59,0,Discontinued
+93,SolarPower Pad (v93),14,8,80.9,62.32,172,Active
+94,"ProDisplay HD 24"" (v94)",2,20,689.8,487.54,0,Out of Stock
+95,ColorInk XL Cartridge (v95),13,10,915.75,681.08,444,Active
+96,ProLens Mirrorless Camera (v96),11,1,363.3,257.3,221,Active
+97,PulseRing Sport (v97),7,1,393.5,228.55,138,Active
+98,AudioPulse Wireless Earbuds (v98),5,19,886.82,604.94,0,Discontinued
+99,Apex Workstation 16 (v99),1,18,299.56,190.56,0,Discontinued
+100,LaserJet Pro Printer (v100),13,18,641.38,483.66,0,Discontinued
+101,VRVerse Headset (v101),8,20,897.92,677.86,82,Active
+102,Titan Desktop PC (v102),1,17,453.67,353.05,176,Active
+103,CableClean Tray (v103),15,5,278.21,163.04,108,Active
+104,Chronos Smartwatch Pro (v104),7,10,906.47,665.97,18,Active
+105,VoltBook Pro 14 (v105),1,10,150.27,115.83,496,Active
+106,Prime Z690 Motherboard (v106),3,18,103.98,79.49,45,Active
+107,FlexiPod Tripod (v107),11,6,309.0,245.44,466,Active
+108,PulseBand Fitness Tracker (v108),7,4,73.32,47.28,145,Active
+109,PulseBand Fitness Tracker (v109),7,14,55.68,42.38,83,Active
+110,GameBox X Console (v110),8,3,113.8,67.36,112,Active
+111,CableClean Tray (v111),15,5,68.25,52.71,0,Out of Stock
+112,MechType RGB Keyboard (v112),9,12,514.02,350.94,124,Active
+113,FastCharge 65W Plug (v113),14,9,344.19,270.38,345,Active
+114,PowerCore 750W (v114),3,5,402.62,296.18,206,Active
+115,PowerMax 20K Power Bank (v115),14,1,619.44,437.32,0,Discontinued
+116,PowerSync Braided Cable (v116),12,7,459.33,346.81,295,Active
+117,PulseRing Sport (v117),7,3,1061.3,699.43,172,Active
+118,ColorInk XL Cartridge (v118),13,4,917.35,579.1,241,Active
+119,FlexBook Air (v119),1,17,951.27,593.88,189,Active
+120,ProCarry Laptop Bag (v120),15,13,832.64,599.87,0,Out of Stock
+121,CableClean Tray (v121),15,15,878.7,597.35,148,Active
+122,EcoPaper 500-Sheet Ream (v122),13,20,556.0,333.95,306,Active
+123,Titan Desktop PC (v123),1,7,22.52,15.46,422,Active
+124,MacroDeck 12-Key (v124),9,10,1207.81,695.43,0,Discontinued
+125,AudioPulse Wireless Earbuds (v125),5,7,68.22,42.29,395,Active
+126,Chronos Smartwatch Pro (v126),7,18,879.39,663.49,336,Active
+127,FitActive GPS Watch (v127),7,9,163.64,118.72,18,Active
+128,FitActive GPS Watch (v128),7,9,584.56,451.76,0,Out of Stock
+129,TabPro 10.5 Tablet (v129),10,16,496.66,384.96,0,Discontinued
+130,VoltGuard UPS Battery (v130),14,14,309.51,218.17,157,Active
+131,PrecisionClick Mouse (v131),9,17,769.46,508.19,420,Active
+132,PulseBand Fitness Tracker (v132),7,18,1009.82,695.19,19,Active
+133,SmartHub Central (v133),6,4,932.05,695.11,459,Active
+134,SecureCam Outdoor 4K (v134),6,10,640.94,461.28,105,Active
+135,FastStore NVMe SSD (v135),4,1,634.19,497.22,496,Active
+136,MechType RGB Keyboard (v136),9,14,791.15,577.54,0,Out of Stock
+137,CineLight Ring LED (v137),11,17,53.41,41.75,367,Active
+138,SpeedPro NAS (v138),4,4,599.55,387.78,500,Active
+139,VoltBook Pro 14 (v139),1,3,717.02,566.27,0,Discontinued
+140,ErgoArm Dual Mount (v140),15,16,279.99,172.29,60,Active
+141,FoldTech Duo (v141),10,15,59.59,36.68,397,Active
+142,FitActive GPS Watch (v142),7,5,748.35,480.2,36,Active
+143,PowerSync Braided Cable (v143),12,17,115.64,73.47,335,Active
+144,VRVerse Headset (v144),8,17,1039.72,607.8,49,Active
+145,DataVault External HD (v145),4,15,242.86,160.3,21,Active
+146,ArcadeFight Stick (v146),8,6,460.89,368.2,0,Discontinued
+147,ColorInk XL Cartridge (v147),13,2,568.89,330.22,0,Discontinued
+148,UltraLink HDMI Cable (v148),12,17,811.61,546.54,76,Active
+149,CableClean Tray (v149),15,7,268.63,179.66,0,Discontinued
+150,SmartHub Central (v150),6,8,461.16,315.95,470,Active
+151,ProCarry Laptop Bag (v151),15,1,852.86,559.8,376,Active
+152,ErgoPad Wrist Rest (v152),9,12,570.06,328.54,0,Discontinued
+153,SoundWave Mini Speaker (v153),5,10,737.64,559.89,105,Active
+154,PowerCore 750W (v154),3,4,677.0,411.63,352,Active
+155,EcoPaper 500-Sheet Ream (v155),13,13,819.06,593.61,20,Active
+156,FitActive GPS Watch (v156),7,15,79.66,51.07,0,Out of Stock
+157,ProCarry Laptop Bag (v157),15,12,85.79,67.16,0,Discontinued
+158,StudioBass Soundbar (v158),5,5,82.75,55.53,0,Discontinued
+159,Titan Desktop PC (v159),1,17,830.82,625.49,369,Active
+160,MultiHub USB-C Adapter (v160),12,4,566.96,406.63,267,Active
+161,"VisionMax 27"" (v161)",2,8,20.65,12.1,317,Active
+162,LaserJet Pro Printer (v162),13,3,306.82,224.89,0,Discontinued
+163,GamingView 144Hz (v163),2,13,824.38,505.19,208,Active
+164,DisplayPort Adapter (v164),12,10,686.93,500.48,489,Active
+165,TabPro 10.5 Tablet (v165),10,11,285.43,220.35,0,Discontinued
+166,GamingView 144Hz (v166),2,9,485.93,297.32,268,Active
+167,SolarPower Pad (v167),14,19,786.15,599.59,292,Active
+168,SmartHub Central (v168),6,11,163.67,100.09,474,Active
+169,GameBox X Console (v169),8,11,151.71,98.12,264,Active
+170,ErgoPad Wrist Rest (v170),9,4,340.86,256.79,337,Active
+171,FlexBook Air (v171),1,20,188.79,116.74,0,Discontinued
+172,AudioPulse Wireless Earbuds (v172),5,14,791.11,541.33,82,Active
+173,VoltBook Pro 14 (v173),1,12,394.1,311.87,433,Active
+174,MechType RGB Keyboard (v174),9,15,423.68,256.35,256,Active
+175,MacroDeck 12-Key (v175),9,8,597.89,466.88,0,Discontinued
+176,FastStore NVMe SSD (v176),4,17,922.63,544.54,47,Active
+177,FastCharge 65W Plug (v177),14,10,785.71,495.45,92,Active
+178,TechNova Lite 5G (v178),10,6,301.42,185.39,216,Active
+179,Vortex RTX GPU (v179),3,15,651.33,390.73,239,Active
+180,FitActive GPS Watch (v180),7,14,146.66,99.59,359,Active
+181,SpeedPro NAS (v181),4,5,1112.37,662.19,492,Active
+182,SmartThermo V2 (v182),6,7,535.78,335.74,74,Active
+183,SpeedPro NAS (v183),4,17,845.33,506.81,218,Active
+184,DeskFlex Leather Mat (v184),15,1,625.92,364.32,312,Active
+185,ClearStream 4K Webcam (v185),11,8,63.76,44.99,130,Active
+186,AudioPulse Wireless Earbuds (v186),5,1,880.97,552.8,319,Active
+187,ScanMaster Scanner (v187),13,5,210.12,144.01,0,Out of Stock
+188,FoldTech Duo (v188),10,15,1091.6,666.32,359,Active
+189,CineLight Ring LED (v189),11,11,514.5,317.91,461,Active
+190,VRVerse Headset (v190),8,16,324.72,244.26,310,Active
+191,MultiHub USB-C Adapter (v191),12,1,881.86,582.67,0,Discontinued
+192,CloudLink Wi-Fi 6 Router (v192),4,13,435.07,321.53,0,Discontinued
+193,CineLight Ring LED (v193),11,5,125.21,76.78,435,Active
+194,SmartThermo V2 (v194),6,16,740.03,426.69,0,Discontinued
+195,ColorInk XL Cartridge (v195),13,10,659.87,433.67,0,Discontinued
+196,PrecisionClick Mouse (v196),9,13,36.8,27.51,0,Discontinued
+197,TabPro 10.5 Tablet (v197),10,1,679.88,411.24,470,Active
+198,CoreStrike i7 CPU (v198),3,14,124.35,71.48,357,Active
+199,PulseRing Sport (v199),7,9,743.88,581.03,454,Active
+200,GamingView 144Hz (v200),2,15,1008.9,619.06,422,Active
+201,"UltraView 4K 32"" (v201)",2,13,515.93,314.73,360,Active
+202,Titan Desktop PC (v202),1,2,555.82,410.4,244,Active
+203,Prime Z690 Motherboard (v203),3,9,363.41,266.83,0,Out of Stock
+204,Prime Z690 Motherboard (v204),3,19,804.95,548.85,294,Active
+205,Apex Workstation 16 (v205),1,18,849.33,670.74,485,Active
+206,SmartHub Central (v206),6,9,161.88,113.61,428,Active
+207,MechType RGB Keyboard (v207),9,11,667.13,490.72,75,Active
+208,ArcadeFight Stick (v208),8,6,218.86,130.23,303,Active
+209,"UltraView 4K 32"" (v209)",2,13,314.52,246.9,298,Active
+210,PowerMax 20K Power Bank (v210),14,14,135.06,92.18,212,Active
+211,ClearStream 4K Webcam (v211),11,11,426.94,320.26,192,Active
+212,SpeedPro NAS (v212),4,19,307.06,189.02,21,Active
+213,ArcadeFight Stick (v213),8,1,268.35,214.44,196,Active
+214,LaserJet Pro Printer (v214),13,14,187.15,122.9,482,Active
+215,"UltraView 4K 32"" (v215)",2,19,557.89,418.54,472,Active
+216,SecureCam Outdoor 4K (v216),6,10,605.5,435.69,477,Active
+217,Apex Workstation 16 (v217),1,19,166.69,125.48,136,Active
+218,FastStore NVMe SSD (v218),4,6,920.02,670.4,0,Discontinued
+219,EcoGlow Smart Bulb (v219),6,11,765.5,598.19,383,Active
+220,DataVault External HD (v220),4,11,375.45,233.35,125,Active
+221,FastCharge 65W Plug (v221),14,13,660.95,488.12,407,Active
+222,CloudLink Wi-Fi 6 Router (v222),4,7,287.96,209.71,313,Active
+223,PulseBand Fitness Tracker (v223),7,5,719.12,569.23,389,Active
+224,MechType RGB Keyboard (v224),9,8,160.82,92.8,148,Active
+225,"VisionMax 27"" (v225)",2,6,444.57,313.81,170,Active
+226,ProCarry Laptop Bag (v226),15,20,872.04,666.21,264,Active
+227,PulseBand Fitness Tracker (v227),7,7,476.66,339.38,91,Active
+228,GamingView 144Hz (v228),2,1,215.6,131.67,57,Active
+229,FoldTech Duo (v229),10,7,422.88,242.62,0,Discontinued
+230,PulseBand Fitness Tracker (v230),7,15,641.62,493.58,379,Active
+231,PulseRing Sport (v231),7,5,831.11,599.2,351,Active
+232,SolarPower Pad (v232),14,17,234.32,180.05,369,Active
+233,FlexBook Air (v233),1,20,146.77,88.72,12,Active
+234,TabPro 10.5 Tablet (v234),10,19,783.32,463.59,171,Active
+235,FastCharge 65W Plug (v235),14,5,63.26,47.45,0,Discontinued
+236,DataVault External HD (v236),4,11,15.43,11.9,405,Active
+237,CoreStrike i7 CPU (v237),3,4,337.45,213.16,0,Out of Stock
+238,ArcadeFight Stick (v238),8,19,618.74,448.21,74,Active
+239,SecureCam Outdoor 4K (v239),6,9,144.66,111.56,372,Active
+240,FastCharge 65W Plug (v240),14,9,747.45,491.79,0,Discontinued
+241,DeskFlex Leather Mat (v241),15,1,807.38,541.3,0,Discontinued
+242,Chronos Smartwatch Pro (v242),7,19,1138.16,673.34,311,Active
+243,FoldTech Duo (v243),10,18,359.0,251.23,39,Active
+244,PowerCore 750W (v244),3,11,795.98,502.91,150,Active
+245,Titan Desktop PC (v245),1,17,734.99,447.4,279,Active
+246,PrecisionClick Mouse (v246),9,7,960.43,681.0,416,Active
+247,ArcadeFight Stick (v247),8,5,696.26,553.03,213,Active
+248,ProGrip Controller (v248),8,5,439.78,256.88,336,Active
+249,FastCharge 65W Plug (v249),14,11,93.66,60.71,91,Active
+250,Prime Z690 Motherboard (v250),3,6,14.32,10.99,383,Active
+251,ColorInk XL Cartridge (v251),13,13,926.41,531.07,292,Active
+252,FitActive GPS Watch (v252),7,7,970.83,617.16,0,Out of Stock
+253,ColorInk XL Cartridge (v253),13,6,835.44,645.83,99,Active
+254,TechNova X1 Smartphone (v254),10,1,671.74,425.81,435,Active
+255,UltraLink HDMI Cable (v255),12,15,142.59,98.39,435,Active
+256,ErgoArm Dual Mount (v256),15,11,964.55,674.2,44,Active
+257,GameBox X Console (v257),8,10,24.64,18.04,0,Out of Stock
+258,"UltraView 4K 32"" (v258)",2,19,286.66,175.7,100,Active
+259,Prime Z690 Motherboard (v259),3,6,760.29,586.27,123,Active
+260,PulseBand Fitness Tracker (v260),7,1,374.17,296.81,246,Active
+261,VRVerse Headset (v261),8,2,410.35,282.98,393,Active
+262,PulseRing Sport (v262),7,2,1151.04,683.05,121,Active
+263,PowerSync Braided Cable (v263),12,17,18.7,12.17,98,Active
+264,SpeedPro NAS (v264),4,9,112.49,67.64,448,Active
+265,CloudLink Wi-Fi 6 Router (v265),4,4,1165.16,688.21,68,Active
+266,Titan Desktop PC (v266),1,20,261.6,201.76,80,Active
+267,SpeedPro NAS (v267),4,4,420.79,247.53,478,Active
+268,DisplayPort Adapter (v268),12,7,191.82,129.18,277,Active
+269,SmartThermo V2 (v269),6,16,1018.77,626.54,364,Active
+270,DataVault External HD (v270),4,9,226.1,130.14,460,Active
+271,PulseRing Sport (v271),7,3,330.63,232.82,235,Active
+272,FlexBook Air (v272),1,3,667.65,435.71,367,Active
+273,Vortex RTX GPU (v273),3,2,278.02,204.49,405,Active
+274,StudioBass Soundbar (v274),5,3,168.76,121.91,181,Active
+275,ScanMaster Scanner (v275),13,7,594.09,402.96,15,Active
+276,Prime Z690 Motherboard (v276),3,12,777.74,542.03,441,Active
+277,ScanMaster Scanner (v277),13,5,500.4,393.79,98,Active
+278,SpeedPro NAS (v278),4,17,712.43,515.09,500,Active
+279,Titan Desktop PC (v279),1,20,274.78,162.86,170,Active
+280,ProGrip Controller (v280),8,9,110.49,68.5,409,Active
+281,TechNova X1 Smartphone (v281),10,20,741.36,585.48,254,Active
+282,ErgoPad Wrist Rest (v282),9,3,601.79,472.01,341,Active
+283,ProLens Mirrorless Camera (v283),11,14,308.94,209.05,277,Active
+284,SoundWave Mini Speaker (v284),5,9,467.21,322.64,287,Active
+285,EcoPaper 500-Sheet Ream (v285),13,15,848.34,615.54,249,Active
+286,Vortex RTX GPU (v286),3,13,489.5,285.87,410,Active
+287,"ProDisplay HD 24"" (v287)",2,12,799.66,618.18,274,Active
+288,UltraLink HDMI Cable (v288),12,20,870.49,657.18,366,Active
+289,CoreStrike i7 CPU (v289),3,19,19.17,12.71,367,Active
+290,ArcadeFight Stick (v290),8,18,33.37,19.2,395,Active
+291,ErgoArm Dual Mount (v291),15,14,303.8,239.54,237,Active
+292,SoundWave Mini Speaker (v292),5,14,219.89,151.84,350,Active
+293,SpeedPro NAS (v293),4,1,546.96,332.35,290,Active
+294,ProCarry Laptop Bag (v294),15,5,753.16,515.75,253,Active
+295,DeskFlex Leather Mat (v295),15,19,847.7,544.39,241,Active
+296,MacroDeck 12-Key (v296),9,17,350.86,233.72,316,Active
+297,ScanMaster Scanner (v297),13,2,449.29,332.16,165,Active
+298,CineLight Ring LED (v298),11,6,872.38,691.25,418,Active
+299,ProLens Mirrorless Camera (v299),11,11,927.66,591.47,81,Active
+300,SolarPower Pad (v300),14,4,72.06,45.78,401,Active
+301,DisplayPort Adapter (v301),12,3,705.59,479.54,115,Active
+302,CoreStrike i7 CPU (v302),3,2,378.84,284.54,356,Active
+303,CableClean Tray (v303),15,1,228.69,138.2,402,Active
+304,PowerMax 20K Power Bank (v304),14,17,724.76,472.67,91,Active
+305,ProGrip Controller (v305),8,4,417.75,295.98,114,Active
+306,ScanMaster Scanner (v306),13,8,109.83,67.85,283,Active
+307,FitActive GPS Watch (v307),7,10,191.83,124.27,115,Active
+308,MultiHub USB-C Adapter (v308),12,19,880.74,680.87,500,Active
+309,SmartHub Central (v309),6,10,119.35,83.5,224,Active
+310,ArcadeFight Stick (v310),8,1,539.85,421.18,285,Active
+311,GameBox X Console (v311),8,7,455.68,260.67,500,Active
+312,AudioPulse Wireless Earbuds (v312),5,8,635.26,462.79,0,Discontinued
+313,SolarPower Pad (v313),14,3,664.21,508.65,450,Active
+314,CableClean Tray (v314),15,1,769.59,445.64,123,Active
+315,FlexiPod Tripod (v315),11,4,936.62,618.7,398,Active
+316,ErgoArm Dual Mount (v316),15,2,450.41,268.83,307,Active
+317,ErgoArm Dual Mount (v317),15,5,314.99,233.35,33,Active
+318,"VisionMax 27"" (v318)",2,16,1140.84,656.16,162,Active
+319,VoltBook Pro 14 (v319),1,15,220.7,146.49,275,Active
+320,CineLight Ring LED (v320),11,3,153.37,115.74,494,Active
+321,Chronos Smartwatch Pro (v321),7,18,748.33,457.64,441,Active
+322,MechType RGB Keyboard (v322),9,11,584.54,464.06,0,Out of Stock
+323,TabPro 10.5 Tablet (v323),10,11,668.89,450.9,48,Active
+324,PulseBand Fitness Tracker (v324),7,18,462.26,298.97,0,Out of Stock
+325,ErgoArm Dual Mount (v325),15,13,184.56,124.19,17,Active
+326,PrecisionClick Mouse (v326),9,2,807.33,589.27,0,Discontinued
+327,ScanMaster Scanner (v327),13,6,238.54,140.26,147,Active
+328,SpeedPro NAS (v328),4,11,594.48,443.0,277,Active
+329,ProLens Mirrorless Camera (v329),11,16,77.15,61.45,424,Active
+330,FlexiPod Tripod (v330),11,5,198.9,117.8,315,Active
+331,VoltBook Pro 14 (v331),1,19,873.18,657.46,196,Active
+332,CloudLink Wi-Fi 6 Router (v332),4,1,536.89,388.17,431,Active
+333,VoltGuard UPS Battery (v333),14,2,675.43,428.98,77,Active
+334,ProCarry Laptop Bag (v334),15,10,350.09,265.93,363,Active
+335,AudioPulse Wireless Earbuds (v335),5,2,402.41,251.63,266,Active
+336,ScanMaster Scanner (v336),13,3,908.07,553.89,18,Active
+337,DataVault External HD (v337),4,13,1001.1,589.08,70,Active
+338,SmartThermo V2 (v338),6,19,960.23,698.66,490,Active
+339,DisplayPort Adapter (v339),12,13,149.49,110.83,0,Discontinued
+340,PulseRing Sport (v340),7,13,664.05,425.0,155,Active
+341,TabPro 10.5 Tablet (v341),10,3,371.14,264.12,476,Active
+342,VoltGuard UPS Battery (v342),14,6,906.32,525.2,278,Active
+343,Chronos Smartwatch Pro (v343),7,6,1031.03,673.07,0,Discontinued
+344,PulseRing Sport (v344),7,3,1019.43,664.3,106,Active
+345,CableClean Tray (v345),15,12,663.02,429.14,317,Active
+346,ClearStream 4K Webcam (v346),11,5,251.44,154.66,452,Active
+347,PulseRing Sport (v347),7,18,735.57,498.53,479,Active
+348,LaserJet Pro Printer (v348),13,14,294.31,214.27,35,Active
+349,PrecisionClick Mouse (v349),9,9,96.49,71.47,107,Active
+350,LaserJet Pro Printer (v350),13,20,147.79,112.56,0,Discontinued
+351,"ProDisplay HD 24"" (v351)",2,10,68.74,39.52,486,Active
+352,PulseBand Fitness Tracker (v352),7,5,939.42,669.83,126,Active
+353,FastCharge 65W Plug (v353),14,2,786.09,513.11,70,Active
+354,FlexBook Air (v354),1,7,388.36,228.37,250,Active
+355,PowerCore 750W (v355),3,2,754.68,452.88,91,Active
+356,PowerSync Braided Cable (v356),12,5,900.45,636.47,342,Active
+357,Vortex RTX GPU (v357),3,2,278.69,167.3,0,Out of Stock
+358,PulseBand Fitness Tracker (v358),7,14,604.06,437.56,215,Active
+359,CoreStrike i7 CPU (v359),3,19,765.6,456.08,77,Active
+360,ErgoArm Dual Mount (v360),15,1,478.84,334.33,11,Active
+361,ArcadeFight Stick (v361),8,20,497.05,289.28,180,Active
+362,VRVerse Headset (v362),8,5,746.32,595.45,490,Active
+363,AudioPulse Wireless Earbuds (v363),5,16,118.2,88.76,47,Active
+364,CineLight Ring LED (v364),11,7,653.3,464.03,16,Active
+365,FlexBook Air (v365),1,16,549.33,349.63,0,Out of Stock
+366,SecureCam Outdoor 4K (v366),6,2,482.51,296.24,101,Active
+367,Titan Desktop PC (v367),1,5,947.57,584.16,379,Active
+368,"UltraView 4K 32"" (v368)",2,19,489.35,363.37,107,Active
+369,AudioPulse Wireless Earbuds (v369),5,6,838.92,596.99,156,Active
+370,MechType RGB Keyboard (v370),9,20,818.56,546.91,0,Out of Stock
+371,PrecisionClick Mouse (v371),9,14,764.68,543.25,0,Out of Stock
+372,FlexBook Air (v372),1,16,374.18,228.34,412,Active
+373,VRVerse Headset (v373),8,2,107.72,67.43,95,Active
+374,FastCharge 65W Plug (v374),14,18,84.88,59.53,140,Active
+375,VoltBook Pro 14 (v375),1,20,560.89,393.05,0,Discontinued
+376,UltraLink HDMI Cable (v376),12,3,380.33,228.07,377,Active
+377,ScanMaster Scanner (v377),13,20,646.0,470.01,481,Active
+378,PulseRing Sport (v378),7,2,720.49,575.77,310,Active
+379,DataVault External HD (v379),4,1,318.66,226.66,19,Active
+380,ColorInk XL Cartridge (v380),13,8,212.89,128.86,0,Discontinued
+381,Chronos Smartwatch Pro (v381),7,13,871.44,538.19,0,Out of Stock
+382,CableClean Tray (v382),15,18,667.89,480.72,390,Active
+383,VoltBook Pro 14 (v383),1,15,155.66,110.33,183,Active
+384,"ProDisplay HD 24"" (v384)",2,13,779.81,485.97,114,Active
+385,PowerSync Braided Cable (v385),12,8,665.91,505.98,0,Discontinued
+386,VRVerse Headset (v386),8,10,894.56,595.75,37,Active
+387,ScanMaster Scanner (v387),13,14,55.69,34.59,257,Active
+388,Apex Workstation 16 (v388),1,20,53.27,33.51,0,Out of Stock
+389,"ProDisplay HD 24"" (v389)",2,18,782.21,606.63,448,Active
+390,CableClean Tray (v390),15,5,348.04,268.11,293,Active
+391,SmartHub Central (v391),6,18,401.52,243.32,346,Active
+392,GamingView 144Hz (v392),2,4,48.01,27.48,354,Active
+393,CoreStrike i7 CPU (v393),3,5,345.58,222.91,13,Active
+394,VRVerse Headset (v394),8,16,357.78,257.53,367,Active
+395,ColorInk XL Cartridge (v395),13,2,1092.27,643.38,0,Out of Stock
+396,SoundWave Pro Headphones (v396),5,13,886.2,576.9,305,Active
+397,StudioBass Soundbar (v397),5,14,985.89,563.72,0,Discontinued
+398,SpeedPro NAS (v398),4,11,925.39,646.38,80,Active
+399,UltraLink HDMI Cable (v399),12,13,727.19,519.2,0,Discontinued
+400,MechType RGB Keyboard (v400),9,15,224.1,155.18,179,Active
